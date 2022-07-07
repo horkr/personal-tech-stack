@@ -1,25 +1,69 @@
-plugins {
-    id 'org.springframework.boot' version '2.6.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+/*plugins {
     id 'java'
 }
 
-group = 'com.horkr'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+group 'com.pd'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.4'
-    implementation('ch.qos.logback:logback-core:1.2.3')
-    implementation('ch.qos.logback:logback-classic:1.2.3')
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}*/
+
+
+group 'com.horkr'
+version = '1.0-SNAPSHOT'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+//构建Gradle脚本自身需要的资源，可以声明的资源包括依赖项、第三方插件、maven仓库地址等。
+buildscript {
+    ext {
+        springBootVersion = '2.3.2.RELEASE'
+        springCloudVersion = 'Hoxton.SR8'
+    }
+
+    //设置仓库
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://repo.spring.io/milestone'}
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+//配置全局, 包括root项目和子项目
+allprojects {
+
+    //设置仓库
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://repo.spring.io/milestone'}
+    }
+
+    //配置编码格式
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+}
+
+//配置所有子项目
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+//    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
 }

@@ -4,13 +4,21 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="E:/develop_tools/gradle-7.0-bin/gradle-7.0" />
+        <option name="gradleHome" value="E:/develop_tools/gradle551/gradle-5.5.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/cloud-service-common" />
+            <option value="$PROJECT_DIR$/cloud-service-consumer" />
+            <option value="$PROJECT_DIR$/cloud-service-provider" />
             <option value="$PROJECT_DIR$/concurrency" />
+            <option value="$PROJECT_DIR$/eureka-server" />
+            <option value="$PROJECT_DIR$/nacos-register-server" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,0 +1,8 @@
+#启动两个实例用不同的配置文件即可互相注册，成为注册中心集群，其中horkr.com是在host中127.0.0.1做的映射，因为eureka用主机名来区分
+
+spring:
+  application:
+    name: eurka-server
+
+  profiles:
+    active: replicas1

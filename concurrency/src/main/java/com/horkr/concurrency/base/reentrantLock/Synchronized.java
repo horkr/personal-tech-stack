@@ -1,6 +1,6 @@
 package com.horkr.concurrency.base.reentrantLock;
 
-import com.horkr.concurrency.base.util.ThreadUtil;
+import com.horkr.cloud.ThreadUtil;
 
 import java.util.concurrent.TimeUnit;
 
