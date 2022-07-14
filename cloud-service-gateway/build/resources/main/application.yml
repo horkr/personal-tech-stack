@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: c27ae251-cc1e-4523-b4a8-c5b9bd9a3896
+    gateway:
+      discovery:
+#        定位器
+        locator:
+#          开启后可以通过微服务名访问网关，gateway通过微服务名去注册中心把微服务名替换成微服务地址，一般不推荐开启，建议用路由匹配规则
+          enabled: false
+#      是否开启网关
+      enabled: true
+      routes:
+        - id: service-consumer
+          uri: lb://service-consumer
+          predicates:
+            - Path=/consume/**
+
+server:
+  port: 8888

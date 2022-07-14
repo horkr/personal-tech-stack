@@ -5,4 +5,4 @@ spring:
     name: eurka-server
 
   profiles:
-    active: replicas1
+    active: replicas2

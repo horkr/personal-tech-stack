@@ -5,4 +5,5 @@ include 'cloud-service-provider'
 include 'cloud-service-consumer'
 include 'cloud-service-common'
 include 'nacos-register-server'
+include 'cloud-service-gateway'
 

@@ -20,3 +20,15 @@ H
 Qcloud-service-provider/src/main/java/com/horkr/eureka/provider/ApiController.java,0\0\00d0180b6485378efc4ae0761bb16ffbc19e9391
 Ž
 ^cloud-service-provider/src/main/java/com/horkr/eureka/provider/ServiceProviderApplication.java,f\6\f678954b687a785af4e7f17789d1eef3e78e60a4
+S
+#cloud-service-provider/build.gradle,8\9\8996ccdb520afda28ede122dc12650a1df14a60e
+’
+bcloud-service-common/src/main/java/com/horkr/eureka/common/interceptor/CommonFeignInterceptor.java,6\8\68094a4ff55fcd2cc496895d76f24e14b9efb427
+ƒ
+Scloud-service-common/src/main/java/com/horkr/eureka/common/service/CommonFeign.java,b\2\b25727e69c62c78affa88e05aad0b7b9f5be07fe
+ˆ
+Xcloud-service-common/src/main/java/com/horkr/eureka/common/config/CommonFeignConfig.java,3\4\3439b7f08b5ee0ab78adf61297b5de5f7269e4b1
+‘
+acloud-service-consumer/src/main/java/com/horkr/eureka/consumer/controller/ConsumerController.java,4\8\480cc430b9b9356c3b21e3330884a6930a093781
+‹
+[cloud-service-consumer/src/main/java/com/horkr/eureka/consumer/service/ConsumerService.java,e\0\e0990e0e3dc5809326a134b4e649b82296ea451d
