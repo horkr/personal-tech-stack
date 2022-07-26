@@ -6,4 +6,6 @@ include 'cloud-service-consumer'
 include 'cloud-service-common'
 include 'nacos-register-server'
 include 'cloud-service-gateway'
+include 'spring-learn'
+include 'utils-module'
 

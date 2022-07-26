@@ -10,8 +10,7 @@ public class ConsumerService {
     RestTemplate restTemplate;
 
     public String hiService(String name) {
-//        return restTemplate.getForObject("http://service-provider/hiPath?name="+name,String.class);
-        return "";
+        return restTemplate.getForObject("http://service-provider/hiPath?name="+name,String.class);
     }
 
 

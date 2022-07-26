@@ -18,7 +18,7 @@ public class ConsumerController {
     ConsumerService consumerService;
     @Resource
     CommonFeign commonFeign;
-    @RequestMapping(value = "/hi")
+    @RequestMapping(value = "/hi-restemplate")
     public String hi(@RequestParam String name){
         return consumerService.hiService(name);
     }

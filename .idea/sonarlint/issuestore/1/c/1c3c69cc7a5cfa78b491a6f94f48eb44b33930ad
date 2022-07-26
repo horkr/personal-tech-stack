@@ -1,0 +1,21 @@
+
+G
+java:S1602D",Remove useless curly braces around statement(–Š‘”ÿÿÿÿÿ
+i
+java:S3776‰"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÎÆÆ¨
+^	java:S125œ"<This block of commented-out lines of code should be removed.(ûô´¼þÿÿÿÿ8ðÖø¨¡0
+F
+java:S3252ñ"/Use static access with "!Unknown!" for "Entry".(ã±–
+Y
+java:S1172Ä";Remove these unused method parameters "oldNode", "newNode".(¦©ÿ•8“£–©¡0
+Y	java:S125Ç"<This block of commented-out lines of code should be removed.(ü«²ý8Â‚–©¡0
+N
+java:S1135Æ"2Complete the task associated to this TODO comment.(”†Öäùÿÿÿÿ
+^
+java:S1854Ú"@Remove this useless assignment to local variable "treeNodeData".(à›¤¢8åÆ”©¡0
+O
+java:S1481Ú"1Remove this unused "treeNodeData" local variable.(à›¤¢8æÆ”©¡0
+U
+java:S1135Û"2Complete the task associated to this TODO comment.(”†Öäùÿÿÿÿ8®™•©¡0
+^	java:S125Ý"<This block of commented-out lines of code should be removed.(ªŸÊÝøÿÿÿÿ8”©¡0
+t	java:S135”"YReduce the total number of break and continue statements in this loop to use at most one.(±É¦£þÿÿÿÿ

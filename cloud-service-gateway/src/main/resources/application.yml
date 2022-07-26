@@ -28,7 +28,6 @@ spring:
           filters:
             - AddRequestHeader=X-Request-color, red  #添加请求头
             - AddRequestParameter=color, blue  # 添加请求参数
-            -
 
 server:
   port: 8888
