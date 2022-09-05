@@ -1,0 +1,15 @@
+
+n
+java:S3008"SRename this field "MSG_DEMO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è²ÇÏøÿÿÿÿ
+q
+java:S3008"TRename this field "FILE_ONLY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¸²ß8„ÎóÁ£0
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ıÙºùÿÿÿÿ
+o
+java:S1104"TMake MSG_DEMO a static final constant or non-public and provide accessors if needed.(è²ÇÏøÿÿÿÿ
+r
+java:S1104"UMake FILE_ONLY a static final constant or non-public and provide accessors if needed.(—¸²ß8ˆÎóÁ£0
+I
+java:S1444".Make this "public static MSG_DEMO" field final(è²ÇÏøÿÿÿÿ
+L
+java:S1444"/Make this "public static FILE_ONLY" field final(—¸²ß8ˆÎóÁ£0

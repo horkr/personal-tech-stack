@@ -1,16 +1,16 @@
-
-spring:
-  application:
-#    表示当前微服务需要向配置中心索要order-center的配置
-    name: service-consumer
-  profiles:
-    active: dev
-  cloud:
-    nacos:
-      config:
-#        表示我微服务怎么去找我的配置中心
-        server-addr: 127.0.0.1:8848
-        file-extension: yml
-        namespace: c27ae251-cc1e-4523-b4a8-c5b9bd9a3896
-        #各个微服务共享的配置,注意越拍到后面的公共配置yml优先级越高
-#        shared-configs:
+##整合nacos config
+#spring:
+#  application:
+##    表示当前微服务需要向配置中心索要order-center的配置
+#    name: service-consumer
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+##        表示我微服务怎么去找我的配置中心
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yml
+#        namespace: c27ae251-cc1e-4523-b4a8-c5b9bd9a3896
+#        #各个微服务共享的配置,注意越拍到后面的公共配置yml优先级越高
+##        shared-configs:

@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/cloud-service-gateway" />
             <option value="$PROJECT_DIR$/cloud-service-provider" />
             <option value="$PROJECT_DIR$/concurrency" />
+            <option value="$PROJECT_DIR$/design-patterns" />
             <option value="$PROJECT_DIR$/eureka-server" />
             <option value="$PROJECT_DIR$/nacos-register-server" />
             <option value="$PROJECT_DIR$/spring-learn" />

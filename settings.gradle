@@ -8,4 +8,5 @@ include 'nacos-register-server'
 include 'cloud-service-gateway'
 include 'spring-learn'
 include 'utils-module'
+include 'design-patterns'
 

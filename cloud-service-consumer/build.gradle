@@ -2,7 +2,13 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-ribbon'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.3.2.RELEASE'
-
+    implementation 'com.alibaba.csp:sentinel-core:1.8.0'
+    implementation 'com.alibaba.csp:sentinel-annotation-aspectj:1.8.0'
+    implementation 'com.alibaba.csp:sentinel-transport-simple-http:1.8.0'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2.2.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.3.2.RELEASE'
+//    解决流控链路不生效的问题
+    implementation 'com.alibaba.csp:sentinel-web-servlet:1.8.0'
     compile project(':cloud-service-common')
 //    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign',version:'3.0.3'
 }
