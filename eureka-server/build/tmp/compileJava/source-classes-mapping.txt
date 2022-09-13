@@ -1,2 +1,0 @@
-com/horkr/eureka/Application.java
- com.horkr.eureka.Application

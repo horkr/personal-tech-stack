@@ -1,8 +1,11 @@
 package com.horkr.cloud.consumer.controller;
 
 import com.horkr.cloud.consumer.service.ConsumerService;
+import com.horkr.cloud.eureka.common.dto.BusinessDto;
 import com.horkr.cloud.eureka.common.service.CommonFeign;
+import com.horkr.cloud.eureka.common.service.CommonFeignHystrix;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +19,10 @@ import javax.annotation.Resource;
 public class ConsumerController {
     @Autowired
     ConsumerService consumerService;
-    @Resource
+    @Autowired
+    @Qualifier("com.horkr.cloud.eureka.common.service.CommonFeign")
     CommonFeign commonFeign;
+
     @RequestMapping(value = "/hi-restemplate")
     public String hi(@RequestParam String name){
         return consumerService.hiService(name);
@@ -30,7 +35,7 @@ public class ConsumerController {
     private String ephemeral;
     @RequestMapping(value = "/hi-feign")
     public String hiFeign(@RequestParam String name){
-        return "当前通过feign模式访问服务"+commonFeign.request(name);
+        return commonFeign.request(name);
     }
 
 

@@ -13,11 +13,11 @@ public class CommonFeignConfig {
         // 生产建议用basic，否则日志太多
         return Logger.Level.BASIC;
     }
-
-
-    @Bean
-    public RequestInterceptor requestInterceptor(){
-        return new CommonFeignInterceptor();
-    }
+//
+//
+//    @Bean
+//    public RequestInterceptor requestInterceptor(){
+//        return new CommonFeignInterceptor();
+//    }
 
 }

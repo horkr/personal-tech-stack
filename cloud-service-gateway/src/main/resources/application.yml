@@ -23,11 +23,16 @@ spring:
           uri: lb://service-consumer
 #          如果符合一下路径条件，则路由
           predicates:
-            - Path=/consume/**
+            - Path=/**/**
 #          对请求增强
-          filters:
-            - AddRequestHeader=X-Request-color, red  #添加请求头
-            - AddRequestParameter=color, blue  # 添加请求参数
-
+#          filters:
+#            - AddRequestHeader=X-Request-color, red  #添加请求头
+#            - AddRequestParameter=color, blue  # 添加请求参数
+        - id: service-provider
+          #          路由到那个微服务，lb是支持loadblance
+          uri: lb://service-provider
+          #          如果符合一下路径条件，则路由
+          predicates:
+            - Path=/**/**
 server:
   port: 8888

@@ -14,6 +14,7 @@ public class SentinelService {
             fallback = "fallback"
     )
     public String linkTest() {
+
         return "hello world";
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 保证@SentinelResource能够生效的切面
  * @author 卢亮宏
  */
 @Configuration
