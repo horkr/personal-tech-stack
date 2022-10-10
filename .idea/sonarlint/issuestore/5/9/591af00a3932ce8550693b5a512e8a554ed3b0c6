@@ -1,0 +1,6 @@
+
+M
+java:S1854"7Remove this useless assignment to local variable "run".(¡Ë‹Ò
+>
+java:S1481"(Remove this unused "run" local variable.(¡Ë‹Ò
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ

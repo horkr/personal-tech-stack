@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * 微服务解耦 netflix feign aop代理配置
+ * feign client接口方法动态aop拦截
  *
  * @author 卢亮宏
  */

@@ -9,6 +9,10 @@ import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfigurati
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @EnableEurekaClient
 @SpringBootApplication(exclude = {EurekaClientAutoConfiguration.class, EurekaDiscoveryClientConfiguration.class})
@@ -26,7 +30,10 @@ public class ServiceProviderApplication {
     String port;
     @RequestMapping("/hi")
     public String home(@RequestParam String name) {
-//        int a = 1/0;
+        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpServletRequest request = requestAttributes.getRequest();
+        String token = request.getHeader("Token");
+        System.out.println(token);
         return String.format("你好:%s,服务提供方：%s，正在运行~",name,port);
     }
 }

@@ -10,3 +10,9 @@ T
 java:S3400"9Remove this method and declare a constant for this value.(¢Â€±üÿÿÿÿ
 >
 java:S1172"(Remove this unused method parameter "e".(Ìïèå
+J
+java:S1172"(Remove this unused method parameter "e".(êÙõÔøÿÿÿÿ8ß¡Ä¬³0
+J
+java:S1172"(Remove this unused method parameter "e".(ÙÏÕ÷şÿÿÿÿ8¡¨ì­³0
+u
+java:S1192"SDefine a constant instead of duplicating this literal "===è¢«é™æµå•¦===" 3 times.(¢Â€±üÿÿÿÿ8¢¨ì­³0

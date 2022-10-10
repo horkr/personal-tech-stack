@@ -14,10 +14,10 @@ public class CommonFeignConfig {
         return Logger.Level.BASIC;
     }
 //
-//
-//    @Bean
-//    public RequestInterceptor requestInterceptor(){
-//        return new CommonFeignInterceptor();
-//    }
+
+    @Bean
+    public RequestInterceptor requestInterceptor(){
+        return new CommonFeignInterceptor();
+    }
 
 }
