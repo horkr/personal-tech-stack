@@ -16,36 +16,36 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ListCompareResult<T extends Comparable<T>> {
+public class ListCompareResult<T> {
 
     /**
      * 新增的数据
      */
-   private List<T> addList;
+    private List<T> addList;
 
     /**
      * 移除的数据
      */
-   private List<T> removeList;
+    private List<T> removeList;
 
     /**
      * 无变化的数据
      */
-   private List<T> noChangeList;
+    private List<T> noChangeList;
 
     /**
      * 更新的数据
      */
-   private List<T> changeList;
+    private List<T> changeList;
 
     /**
      * 替换的数据
      */
-   private List<T> replaceList;
+    private List<T> replaceList;
 
 
-   public boolean childrenHasChange(){
-       return  CollectionUtils.isNotEmpty(removeList)||CollectionUtils.isNotEmpty(addList)||CollectionUtils.isNotEmpty(replaceList);
-   }
+    public boolean childrenHasChange(){
+        return  CollectionUtils.isNotEmpty(removeList)||CollectionUtils.isNotEmpty(addList)||CollectionUtils.isNotEmpty(replaceList);
+    }
 
 }

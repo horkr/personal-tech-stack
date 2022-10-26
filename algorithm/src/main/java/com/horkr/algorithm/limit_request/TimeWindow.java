@@ -5,22 +5,20 @@ package com.horkr.algorithm.limit_request;
  */
 public class TimeWindow {
 
-    private long count;
+    private long requestTimes;
 
     private long startTime;
 
-    private long interval;
-
     public void increase(){
-        count++;
+        requestTimes++;
     }
 
-    public long getCount() {
-        return count;
+    public long getRequestTimes() {
+        return requestTimes;
     }
 
-    public void setCount(long count) {
-        this.count = count;
+    public void setRequestTimes(long requestTimes) {
+        this.requestTimes = requestTimes;
     }
 
     public long getStartTime() {
@@ -31,22 +29,12 @@ public class TimeWindow {
         this.startTime = startTime;
     }
 
-    public long getInterval() {
-        return interval;
-    }
-
-    public void setInterval(long interval) {
-        this.interval = interval;
-    }
 
     public TimeWindow() {
     }
 
-    public TimeWindow(long count, long startTime, long interval) {
-        this.count = count;
+    public TimeWindow(long requestTimes, long startTime) {
+        this.requestTimes = requestTimes;
         this.startTime = startTime;
-        this.interval = interval;
     }
-
-
 }

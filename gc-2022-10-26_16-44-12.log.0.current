@@ -1,0 +1,120 @@
+Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for windows-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 04:01:33 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 16516484k(1498828k free), swap 35410176k(5223768k free)
+CommandLine flags: -XX:-BytecodeVerificationLocal -XX:-BytecodeVerificationRemote -XX:GCLogFileSize=104857600 -XX:InitialHeapSize=264263744 -XX:+ManagementServer -XX:MaxHeapSize=4228219904 -XX:NumberOfGCLogFiles=14 -XX:+PrintGC -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:+PrintReferenceGC -XX:+PrintSafepointStatistics -XX:PrintSafepointStatisticsCount=1 -XX:+PrintTenuringDistribution -XX:TieredStopAtLevel=1 -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseGCLogFileRotation -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+2022-10-26T16:44:13.174+0800: 0.239: Total time for which application threads were stopped: 0.0002668 seconds, Stopping threads took: 0.0000576 seconds
+2022-10-26T16:44:14.182+0800: 1.247: Total time for which application threads were stopped: 0.0001199 seconds, Stopping threads took: 0.0000307 seconds
+2022-10-26T16:44:16.813+0800: 3.877: Total time for which application threads were stopped: 0.0001888 seconds, Stopping threads took: 0.0000245 seconds
+2022-10-26T16:44:16.821+0800: 3.886: Total time for which application threads were stopped: 0.0001644 seconds, Stopping threads took: 0.0000265 seconds
+2022-10-26T16:44:16.845+0800: 3.910: Total time for which application threads were stopped: 0.0001503 seconds, Stopping threads took: 0.0000286 seconds
+2022-10-26T16:44:16.851+0800: 3.915: Total time for which application threads were stopped: 0.0001572 seconds, Stopping threads took: 0.0000284 seconds
+2022-10-26T16:44:17.128+0800: 4.193: Total time for which application threads were stopped: 0.0002189 seconds, Stopping threads took: 0.0000271 seconds
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 65024K [0x000000076bf80000, 0x0000000771400000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bf80000,0x000000076ff00000,0x000000076ff00000)
+  from space 10752K, 0% used [0x0000000770980000,0x0000000770980000,0x0000000771400000)
+  to   space 10752K, 0% used [0x000000076ff00000,0x000000076ff00000,0x0000000770980000)
+ ParOldGen       total 173568K, used 0K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e00000,0x00000006ce780000)
+ Metaspace       used 14347K, capacity 14756K, committed 14976K, reserved 1062912K
+  class space    used 1753K, capacity 1860K, committed 1920K, reserved 1048576K
+2022-10-26T16:44:17.301+0800: 4.366: [GC (Allocation Failure) 2022-10-26T16:44:17.304+0800: 4.370: [SoftReference, 0 refs, 0.0000796 secs]2022-10-26T16:44:17.304+0800: 4.370: [WeakReference, 810 refs, 0.0000689 secs]2022-10-26T16:44:17.305+0800: 4.370: [FinalReference, 1828 refs, 0.0025199 secs]2022-10-26T16:44:17.307+0800: 4.372: [PhantomReference, 0 refs, 1 refs, 0.0000153 secs]2022-10-26T16:44:17.307+0800: 4.372: [JNI Weak Reference, 0.0000362 secs]
+Desired survivor size 11010048 bytes, new threshold 7 (max 15)
+[PSYoungGen: 65024K->8010K(75776K)] 65024K->8026K(249344K), 0.0067187 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 8010K [0x000000076bf80000, 0x0000000771400000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bf80000,0x000000076bf80000,0x000000076ff00000)
+  from space 10752K, 74% used [0x000000076ff00000,0x00000007706d2ac0,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000770980000,0x0000000770980000,0x0000000771400000)
+ ParOldGen       total 173568K, used 16K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e04000,0x00000006ce780000)
+ Metaspace       used 14347K, capacity 14756K, committed 14976K, reserved 1062912K
+  class space    used 1753K, capacity 1860K, committed 1920K, reserved 1048576K
+}
+2022-10-26T16:44:17.308+0800: 4.373: Total time for which application threads were stopped: 0.0069769 seconds, Stopping threads took: 0.0000223 seconds
+2022-10-26T16:44:17.648+0800: 4.714: Total time for which application threads were stopped: 0.0003062 seconds, Stopping threads took: 0.0000249 seconds
+2022-10-26T16:44:17.677+0800: 4.742: Total time for which application threads were stopped: 0.0001699 seconds, Stopping threads took: 0.0000162 seconds
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 75776K, used 73034K [0x000000076bf80000, 0x0000000771400000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bf80000,0x000000076ff00000,0x000000076ff00000)
+  from space 10752K, 74% used [0x000000076ff00000,0x00000007706d2ac0,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000770980000,0x0000000770980000,0x0000000771400000)
+ ParOldGen       total 173568K, used 16K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e04000,0x00000006ce780000)
+ Metaspace       used 19036K, capacity 19816K, committed 19968K, reserved 1067008K
+  class space    used 2489K, capacity 2692K, committed 2816K, reserved 1048576K
+2022-10-26T16:44:17.993+0800: 5.058: [GC (Allocation Failure) 2022-10-26T16:44:18.010+0800: 5.074: [SoftReference, 0 refs, 0.0000441 secs]2022-10-26T16:44:18.010+0800: 5.074: [WeakReference, 1154 refs, 0.0001309 secs]2022-10-26T16:44:18.010+0800: 5.074: [FinalReference, 1989 refs, 0.0025798 secs]2022-10-26T16:44:18.012+0800: 5.077: [PhantomReference, 0 refs, 2 refs, 0.0000154 secs]2022-10-26T16:44:18.012+0800: 5.077: [JNI Weak Reference, 0.0000448 secs]
+Desired survivor size 11010048 bytes, new threshold 7 (max 15)
+[PSYoungGen: 73034K->10164K(75776K)] 73050K->10188K(249344K), 0.0201250 secs] [Times: user=0.03 sys=0.02, real=0.02 secs] 
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 75776K, used 10164K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bf80000,0x000000076bf80000,0x000000076ff00000)
+  from space 10752K, 94% used [0x0000000770980000,0x000000077136d360,0x0000000771400000)
+  to   space 10752K, 0% used [0x000000076ff00000,0x000000076ff00000,0x0000000770980000)
+ ParOldGen       total 173568K, used 24K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e06000,0x00000006ce780000)
+ Metaspace       used 19036K, capacity 19816K, committed 19968K, reserved 1067008K
+  class space    used 2489K, capacity 2692K, committed 2816K, reserved 1048576K
+}
+2022-10-26T16:44:18.014+0800: 5.078: Total time for which application threads were stopped: 0.0203850 seconds, Stopping threads took: 0.0000234 seconds
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 75776K, used 34989K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 38% used [0x000000076bf80000,0x000000076d7be210,0x000000076ff00000)
+  from space 10752K, 94% used [0x0000000770980000,0x000000077136d360,0x0000000771400000)
+  to   space 10752K, 0% used [0x000000076ff00000,0x000000076ff00000,0x0000000770980000)
+ ParOldGen       total 173568K, used 24K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e06000,0x00000006ce780000)
+ Metaspace       used 20409K, capacity 21248K, committed 21296K, reserved 1067008K
+  class space    used 2690K, capacity 2912K, committed 2944K, reserved 1048576K
+2022-10-26T16:44:18.335+0800: 5.399: [GC (Metadata GC Threshold) 2022-10-26T16:44:18.345+0800: 5.409: [SoftReference, 0 refs, 0.0000581 secs]2022-10-26T16:44:18.345+0800: 5.409: [WeakReference, 1142 refs, 0.0001092 secs]2022-10-26T16:44:18.345+0800: 5.410: [FinalReference, 785 refs, 0.0008799 secs]2022-10-26T16:44:18.346+0800: 5.410: [PhantomReference, 0 refs, 2 refs, 0.0000127 secs]2022-10-26T16:44:18.346+0800: 5.410: [JNI Weak Reference, 0.0000497 secs]
+Desired survivor size 11010048 bytes, new threshold 7 (max 15)
+[PSYoungGen: 34989K->7456K(75776K)] 35013K->7488K(249344K), 0.0123142 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 75776K, used 7456K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bf80000,0x000000076bf80000,0x000000076ff00000)
+  from space 10752K, 69% used [0x000000076ff00000,0x0000000770648260,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000774900000,0x0000000774900000,0x0000000775380000)
+ ParOldGen       total 173568K, used 32K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e08000,0x00000006ce780000)
+ Metaspace       used 20409K, capacity 21248K, committed 21296K, reserved 1067008K
+  class space    used 2690K, capacity 2912K, committed 2944K, reserved 1048576K
+}
+{Heap before GC invocations=4 (full 1):
+ PSYoungGen      total 75776K, used 7456K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bf80000,0x000000076bf80000,0x000000076ff00000)
+  from space 10752K, 69% used [0x000000076ff00000,0x0000000770648260,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000774900000,0x0000000774900000,0x0000000775380000)
+ ParOldGen       total 173568K, used 32K [0x00000006c3e00000, 0x00000006ce780000, 0x000000076bf80000)
+  object space 173568K, 0% used [0x00000006c3e00000,0x00000006c3e08000,0x00000006ce780000)
+ Metaspace       used 20409K, capacity 21248K, committed 21296K, reserved 1067008K
+  class space    used 2690K, capacity 2912K, committed 2944K, reserved 1048576K
+2022-10-26T16:44:18.348+0800: 5.412: [Full GC (Metadata GC Threshold) 2022-10-26T16:44:18.359+0800: 5.424: [SoftReference, 0 refs, 0.0000711 secs]2022-10-26T16:44:18.360+0800: 5.424: [WeakReference, 347 refs, 0.0000306 secs]2022-10-26T16:44:18.360+0800: 5.424: [FinalReference, 100 refs, 0.0000118 secs]2022-10-26T16:44:18.360+0800: 5.424: [PhantomReference, 0 refs, 2 refs, 0.0000081 secs]2022-10-26T16:44:18.360+0800: 5.424: [JNI Weak Reference, 0.0000159 secs][PSYoungGen: 7456K->0K(75776K)] [ParOldGen: 32K->7232K(89600K)] 7488K->7232K(165376K), [Metaspace: 20409K->20409K(1067008K)], 0.0418327 secs] [Times: user=0.05 sys=0.02, real=0.04 secs] 
+Heap after GC invocations=4 (full 1):
+ PSYoungGen      total 75776K, used 0K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076bf80000,0x000000076bf80000,0x000000076ff00000)
+  from space 10752K, 0% used [0x000000076ff00000,0x000000076ff00000,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000774900000,0x0000000774900000,0x0000000775380000)
+ ParOldGen       total 89600K, used 7232K [0x00000006c3e00000, 0x00000006c9580000, 0x000000076bf80000)
+  object space 89600K, 8% used [0x00000006c3e00000,0x00000006c4510020,0x00000006c9580000)
+ Metaspace       used 20409K, capacity 21248K, committed 21296K, reserved 1067008K
+  class space    used 2690K, capacity 2912K, committed 2944K, reserved 1048576K
+}
+2022-10-26T16:44:18.390+0800: 5.454: Total time for which application threads were stopped: 0.0545562 seconds, Stopping threads took: 0.0000236 seconds
+2022-10-26T16:44:18.480+0800: 5.544: Total time for which application threads were stopped: 0.0006412 seconds, Stopping threads took: 0.0001513 seconds
+2022-10-26T16:44:18.782+0800: 5.847: Total time for which application threads were stopped: 0.0345236 seconds, Stopping threads took: 0.0340492 seconds
+2022-10-26T16:44:19.058+0800: 6.123: Total time for which application threads were stopped: 0.0003525 seconds, Stopping threads took: 0.0000234 seconds
+2022-10-26T16:44:19.136+0800: 6.201: Total time for which application threads were stopped: 0.0003283 seconds, Stopping threads took: 0.0000254 seconds
+2022-10-26T16:44:19.157+0800: 6.222: Total time for which application threads were stopped: 0.0002921 seconds, Stopping threads took: 0.0000187 seconds
+2022-10-26T16:44:19.167+0800: 6.232: Total time for which application threads were stopped: 0.0002898 seconds, Stopping threads took: 0.0000168 seconds
+2022-10-26T16:44:19.212+0800: 6.276: Total time for which application threads were stopped: 0.0003467 seconds, Stopping threads took: 0.0000242 seconds
+{Heap before GC invocations=5 (full 1):
+ PSYoungGen      total 75776K, used 65024K [0x000000076bf80000, 0x0000000775380000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076bf80000,0x000000076ff00000,0x000000076ff00000)
+  from space 10752K, 0% used [0x000000076ff00000,0x000000076ff00000,0x0000000770980000)
+  to   space 10752K, 0% used [0x0000000774900000,0x0000000774900000,0x0000000775380000)
+ ParOldGen       total 89600K, used 7232K [0x00000006c3e00000, 0x00000006c9580000, 0x000000076bf80000)
+  object space 89600K, 8% used [0x00000006c3e00000,0x00000006c4510020,0x00000006c9580000)
+ Metaspace       used 25442K, capacity 26934K, committed 27008K, reserved 1073152K
+  class space    used 3380K, capacity 3659K, committed 3712K, reserved 1048576K
+2022-10-26T16:44:19.267+0800: 6.332: [GC (Allocation Failure) 2022-10-26T16:44:19.271+0800: 6.335: [SoftReference, 0 refs, 0.0000750 secs]2022-10-26T16:44:19.271+0800: 6.335: [WeakReference, 516 refs, 0.0001377 secs]2022-10-26T16:44:19.271+0800: 6.335: [FinalReference, 1529 refs, 0.0037441 secs]2022-10-26T16:44:19.275+0800: 6.339: [PhantomReference, 0 refs, 0 refs, 0.0000147 secs]2022-10-26T16:44:19.275+0800: 6.339: [JNI Weak Reference, 0.0000387 secs]
+Desired survivor size 11010048 bytes, new threshold 7 (max 15)
+[PSYoungGen: 65024K->6923K(118272K)] 72256K->14163K(207872K), 0.0083940 secs] [Times: user=0.08 sys=0.00, real=0.01 secs] 
