@@ -1,14 +1,17 @@
 package com.horkr.jdk.learn.jvm;
 
 /**
+ * 死锁案例
+ *
  * @author 卢亮宏
  */
-public class  DeadLock {
+public class DeadLock {
     private static Object lock1 = new Object();
     private static Object lock2 = new Object();
 
     public static void main(String[] args) {
         new Thread(() -> {
+            Thread.currentThread().setName("one");
             synchronized (lock1) {
                 try {
                     System.out.println("thread1 begin");
@@ -22,6 +25,7 @@ public class  DeadLock {
         }).start();
 
         new Thread(() -> {
+            Thread.currentThread().setName("two");
             synchronized (lock2) {
                 try {
                     System.out.println("thread2 begin");

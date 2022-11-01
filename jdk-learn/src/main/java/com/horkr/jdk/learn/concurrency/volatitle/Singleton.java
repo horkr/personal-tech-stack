@@ -5,6 +5,9 @@ import static java.util.Objects.isNull;
 /**
  * 1.双重判空原因
  * 多线程情况下，可能俩个线程同时进入第一层判断,对象可能会被创建多次
+ *
+ *
+ *
  * 2.使用volatile的原因
  * 对象创建分为三步
  * a.address = allocate(申请内存空间)

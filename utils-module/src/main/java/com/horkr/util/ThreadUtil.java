@@ -16,4 +16,12 @@ public class ThreadUtil {
 
     }
 
+    public static void join(Thread thread){
+        try {
+            thread.join();
+        } catch (InterruptedException ignore) {
+
+        }
+    }
+
 }
