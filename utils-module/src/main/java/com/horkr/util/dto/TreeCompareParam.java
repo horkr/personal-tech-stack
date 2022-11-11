@@ -1,13 +1,24 @@
 package com.horkr.util.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
-@Setter
-@Getter
 public class TreeCompareParam extends TreeCompareBaseParam {
+
+    public TreeItem getOldTree() {
+        return oldTree;
+    }
+
+    public void setOldTree(TreeItem oldTree) {
+        this.oldTree = oldTree;
+    }
+
+    public List<NewCompareTreeParam> getCompareTreeParams() {
+        return compareTreeParams;
+    }
+
+    public void setCompareTreeParams(List<NewCompareTreeParam> compareTreeParams) {
+        this.compareTreeParams = compareTreeParams;
+    }
 
     private static final long serialVersionUID = -5445717175622798893L;
     /**

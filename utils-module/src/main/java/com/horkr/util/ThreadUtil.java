@@ -42,42 +42,42 @@ public class ThreadUtil {
         return thread;
     }
 
+    public static void objWait(Object lock,long time) {
+        try {
+            lock.wait(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void objWait(Object lock) {
         try {
             lock.wait();
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-
-
-    public static void objNotify(Object lock) {
-        try {
-            lock.notify();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void objNotifyAll(Object lock) {
-        try {
-            lock.notifyAll();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void print(String msg, Object... params) {
-        System.out.println(Thread.currentThread().getName() + ":" + String.format(msg, params));
     }
 
     public static void join(Thread thread) {
         try {
             thread.join();
         } catch (InterruptedException ignore) {
-
         }
     }
+
+
+    public static void objNotify(Object lock) {
+        lock.notify();
+    }
+
+    public static void objNotifyAll(Object lock) {
+        lock.notifyAll();
+    }
+
+    public static void print(String msg, Object... params) {
+        System.out.println(Thread.currentThread().getName() + ":" + String.format(msg, params));
+    }
+
+
 
 }

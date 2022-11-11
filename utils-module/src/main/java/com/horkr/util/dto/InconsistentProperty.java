@@ -1,7 +1,5 @@
 package com.horkr.util.dto;
 
-import lombok.*;
-
 import java.io.Serializable;
 
 /**

@@ -1,9 +1,5 @@
 package com.horkr.util.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.util.List;
@@ -12,10 +8,6 @@ import java.util.List;
  * 两个list对比结果
  * @author llh
  */
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class ListCompareResult<T> {
 
     /**
@@ -43,9 +35,66 @@ public class ListCompareResult<T> {
      */
     private List<T> replaceList;
 
+    public List<T> getAddList() {
+        return addList;
+    }
+
+    public void setAddList(List<T> addList) {
+        this.addList = addList;
+    }
+
+    public List<T> getRemoveList() {
+        return removeList;
+    }
+
+    public void setRemoveList(List<T> removeList) {
+        this.removeList = removeList;
+    }
+
+    public List<T> getNoChangeList() {
+        return noChangeList;
+    }
+
+    public void setNoChangeList(List<T> noChangeList) {
+        this.noChangeList = noChangeList;
+    }
+
+    public List<T> getChangeList() {
+        return changeList;
+    }
+
+    public void setChangeList(List<T> changeList) {
+        this.changeList = changeList;
+    }
+
+    public List<T> getReplaceList() {
+        return replaceList;
+    }
+
+    public void setReplaceList(List<T> replaceList) {
+        this.replaceList = replaceList;
+    }
+
+    public ListCompareResult(List<T> addList, List<T> removeList, List<T> noChangeList, List<T> changeList, List<T> replaceList) {
+        this.addList = addList;
+        this.removeList = removeList;
+        this.noChangeList = noChangeList;
+        this.changeList = changeList;
+        this.replaceList = replaceList;
+    }
+
+
+    public ListCompareResult() {
+    }
 
     public boolean childrenHasChange(){
         return  CollectionUtils.isNotEmpty(removeList)||CollectionUtils.isNotEmpty(addList)||CollectionUtils.isNotEmpty(replaceList);
+    }
+
+
+    public static void main(String[] args) {
+        ListCompareResult<Object> objectListCompareResult = new ListCompareResult<>();
+        System.out.println(objectListCompareResult.getAddList());
     }
 
 }

@@ -1,16 +1,11 @@
 package com.horkr.util.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-@Getter
-@Setter
 public class TreeCompareBaseParam implements Serializable {
 
     private static final long serialVersionUID = 2605393787744625336L;
@@ -44,5 +39,38 @@ public class TreeCompareBaseParam implements Serializable {
     protected void check() {
         checkConfig(uniqueKeyFields,"uniqueKeyFields");
         checkConfig(compareProperties,"compareProperties");
+    }
+
+
+    public boolean isCompareRoot() {
+        return compareRoot;
+    }
+
+    public void setCompareRoot(boolean compareRoot) {
+        this.compareRoot = compareRoot;
+    }
+
+    public List<String> getUniqueKeyFields() {
+        return uniqueKeyFields;
+    }
+
+    public void setUniqueKeyFields(List<String> uniqueKeyFields) {
+        this.uniqueKeyFields = uniqueKeyFields;
+    }
+
+    public List<String> getCompareProperties() {
+        return compareProperties;
+    }
+
+    public void setCompareProperties(List<String> compareProperties) {
+        this.compareProperties = compareProperties;
+    }
+
+    public Map<String, String> getUniqueKeyMapping() {
+        return uniqueKeyMapping;
+    }
+
+    public void setUniqueKeyMapping(Map<String, String> uniqueKeyMapping) {
+        this.uniqueKeyMapping = uniqueKeyMapping;
     }
 }

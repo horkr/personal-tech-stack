@@ -1,23 +1,0 @@
-
-@
-java:S2157"%Add a "clone()" method to this class.(Äà÷ûùÿÿÿÿ
-u
-java:S1210ˆ"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.(‹¹èÙûÿÿÿÿ
-s
-java:S4144z"XUpdate this method so that its implementation is not identical to "getText" on line 119.(Í†„¦úÿÿÿÿ
-<
-java:S1948<"&Make "data" transient or serializable.(¼éñ
-O
-java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8ï›ğ¨¡0
-o
-java:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(·Ÿá
-t
-java:S2293P"YReplace the type specification in this constructor call with the diamond operator ("<>").(£ñŠÂùÿÿÿÿ
-h
-java:S1104"RMake opened a static final constant or non-public and provide accessors if needed.(™ÑÛò
-j
-java:S1104"TMake disabled a static final constant or non-public and provide accessors if needed.(Ä•»–
-o
-java:S1104"TMake selected a static final constant or non-public and provide accessors if needed.(ÌëĞµÿÿÿÿÿ
-p
-java:S1104"UMake highlight a static final constant or non-public and provide accessors if needed.(ËÈğùÿÿÿÿ

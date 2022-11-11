@@ -5,6 +5,7 @@ import com.horkr.util.ThreadUtil;
 import java.util.concurrent.Exchanger;
 
 /**
+ * 线程间交换数据
  * @author 卢亮宏
  */
 public class ExchangerDemo {

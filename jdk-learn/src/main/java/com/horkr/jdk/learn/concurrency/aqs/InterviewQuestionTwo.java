@@ -62,7 +62,7 @@ public class InterviewQuestionTwo {
     }
 
     /**
-     * 通过condition实现
+     * 通过condition实现。这是最正确的版本
      */
     public static class ContainerWithCondition<T> {
         /**

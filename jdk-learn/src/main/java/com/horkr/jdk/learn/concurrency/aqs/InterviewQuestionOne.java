@@ -18,8 +18,8 @@ import static com.horkr.util.ThreadUtil.*;
 public class InterviewQuestionOne {
 
     /**
-     * 实现一个容器，提供两个方法，add，size
-     * 写两个线程，线程1添加10个元素到容器中，线程2实现监控元素的个数，当个数到5个时，线程2给出提示并结束线程2
+     * 用List实现一个同步容器，提供两个方法，add，size
+     * 写两个线程，线程1添加10个元素到容器中，线程2实现监控元素的个数，当个数到5个时，线程2给出提示并结束线程2,进程1继续打印
      */
 
 
@@ -108,7 +108,7 @@ public class InterviewQuestionOne {
 
 
     /**
-     * 解决sync1的问题
+     * 这是最正确的版本。解决sync1的问题
      */
     public void sync2() {
         startByNewThread("T2", () -> {
@@ -211,6 +211,6 @@ public class InterviewQuestionOne {
 
 
     public static void main(String[] args) {
-        new InterviewQuestionOne().withLockSupport();
+        new InterviewQuestionOne().sync2();
     }
 }
