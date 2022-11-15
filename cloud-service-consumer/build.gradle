@@ -1,18 +1,18 @@
 dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-ribbon'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.2.RELEASE'
-    implementation 'com.alibaba.csp:sentinel-core:1.8.0'
-    implementation 'com.alibaba.csp:sentinel-annotation-aspectj:1.8.0'
-    implementation 'com.alibaba.csp:sentinel-transport-simple-http:1.8.0'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:2.2.5.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.3.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
+    implementation 'com.alibaba.csp:sentinel-core:'+sentinel_version
+    implementation 'com.alibaba.csp:sentinel-annotation-aspectj:'+sentinel_version
+    implementation 'com.alibaba.csp:sentinel-transport-simple-http:'+sentinel_version
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:'+spring_sentinel_version
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:'+spring_boot_version
 //    解决流控链路不生效的问题
-    implementation 'com.alibaba.csp:sentinel-web-servlet:1.8.0'
+    implementation 'com.alibaba.csp:sentinel-web-servlet:'+sentinel_version
     compile project(':cloud-service-common')
-    implementation 'org.springframework.boot:spring-boot-starter-aop:2.3.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-aop:'+spring_boot_version
 
-    compile 'cn.hutool:hutool-all:5.7.6'
+    compile 'cn.hutool:hutool-all:'+hutool_version
 //    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign',version:'3.0.3'
 }
 

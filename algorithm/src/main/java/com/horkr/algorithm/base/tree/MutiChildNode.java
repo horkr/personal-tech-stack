@@ -1,19 +1,31 @@
 package com.horkr.algorithm.base.tree;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 import java.util.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 public class MutiChildNode {
     private String data;
     private List<MutiChildNode> childNodes;
+
+    public MutiChildNode(String data, List<MutiChildNode> childNodes) {
+        this.data = data;
+        this.childNodes = childNodes;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public List<MutiChildNode> getChildNodes() {
+        return childNodes;
+    }
+
+    public void setChildNodes(List<MutiChildNode> childNodes) {
+        this.childNodes = childNodes;
+    }
 
     public static void main(String[] args) {
         MutiChildNode build = build();

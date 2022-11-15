@@ -5,8 +5,6 @@ X
 ,cloud-service-common/src/test/java/Test.java,e\c\ecd556c504daf38aa2037cfe9571b5c7957a3ce7
 
 Oeureka-server/src/main/java/com/horkr/cloud/eureka/EurekaServerApplication.java,e\e\eef946ad65b19b5334cab381276c07a837880820
-J
-eureka-server/build.gradle,9\2\926f3c0072d8ffed034ab5418b00a4ab803f7479
 x
 Hspring-learn/src/main/java/com/horkr/spring/learn/event/CustomEvent.java,e\f\ef64e5c273904af494b552281716a508ffdc800f
 {
@@ -76,18 +74,8 @@ lcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/controller/Sentin
 ^cloud-service-consumer/src/main/java/com/horkr/cloud/consumer/dynamicAop/DynamicAopConfig.java,6\f\6fb077396a043ec0f5cd9f534cd39df24078f179
 ú
 lcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service_decoupling/FeignMethodInterceptor.java,f\3\f36ae1db10c15c564bf2c0d427a308bbf2594573
-S
-#cloud-service-consumer/build.gradle,6\4\648ff77a65de39e462e1811db12262bffca0123d
-S
-#cloud-service-provider/build.gradle,8\9\8996ccdb520afda28ede122dc12650a1df14a60e
 ê
 `cloud-service-consumer/src/main/java/com/horkr/cloud/consumer/config/HttpRequestInterceptor.java,6\4\64d04d17bb1cdcc15aa5af02be3e9036b73a505a
-Q
-!cloud-service-common/build.gradle,a\b\abbc040ee170d78fb5f1ba96c96deba2e26d43ca
-R
-"cloud-service-gateway/build.gradle,1\6\16e0425e1444dd87e18874cd07c07665cb4d5551
-H
-concurrency/build.gradle,9\e\9e83128b6e5ba96ff63f61f0b977301afdd3c574
 }
 Malgorithm/src/main/java/com/horkr/algorithm/verification/CollectionFirst.java,c\8\c82262d7c10b820cc65478300578d486f5d15132
 z

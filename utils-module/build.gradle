@@ -16,4 +16,7 @@ dependencies {
     compile('org.slf4j:slf4j-api:' + slf4j_version)
     compile('org.slf4j:slf4j-log4j12:' + slf4j_version)
     compile('org.xerial.snappy:snappy-java:' + snappy_version)
+    compile('org.apache.poi:poi:' + poi_version)
+    compile('org.apache.poi:poi-ooxml:' + poi_version)
+    compile('org.apache.poi:poi-ooxml-schemas:' + poi_version)
 }

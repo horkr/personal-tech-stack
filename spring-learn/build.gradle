@@ -1,7 +1,7 @@
 
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web:2.3.2.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
     compile (project(":algorithm")){
         exclude group:'ch.qos.logback'
     }

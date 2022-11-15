@@ -2,10 +2,10 @@ dependencies {
 //    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 //    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-ribbon'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign'
 //    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign',version:'1.4.4.RELEASE'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2.2.5.RELEASE'
-    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2.2.5.RELEASE'
-    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:'+nacos_version
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:'+nacos_version
+    implementation 'com.google.code.gson:gson:'+gson_version
 }
