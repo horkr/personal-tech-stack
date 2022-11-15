@@ -22,7 +22,6 @@ monitorInterval : Log4j能够自动检测修改配置文件和重新配置本身
             <AppenderRef ref="console"/>
         </root>
 
-
     </Loggers>
 
 </Configuration>

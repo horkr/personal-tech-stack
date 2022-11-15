@@ -21,7 +21,7 @@ public class HeapSort {
     }
 
     /**
-     * 优化的堆排序
+     * 优化的堆排序，不再借助堆对象，就不用再开辟一个数组
      */
     private static void optimizedSortWithHeap() {
         Integer[] arr = {3, 2, 4, 1, 5};
@@ -33,15 +33,18 @@ public class HeapSort {
 
     public static void sort(Comparable[] arr) {
 
-        int n = arr.length;
+        int length = arr.length;
+        /*
+         * 注意，此时我们的堆是从0开始索引的,从(最后一个元素的索引-1)/2开始,最后一个元素的索引 = n-1
+         * 我们先搭建好堆结构
+         */
+        for (int i = (length - 1 - 1) / 2; i >= 0; i--)
+            shiftDown(arr, length, i);
 
-        // 注意，此时我们的堆是从0开始索引的
-        // 从(最后一个元素的索引-1)/2开始
-        // 最后一个元素的索引 = n-1
-        for (int i = (n - 1 - 1) / 2; i >= 0; i--)
-            shiftDown(arr, n, i);
-
-        for (int i = n - 1; i > 0; i--) {
+        /*
+            将最大的排在最后边，相当于从堆中移除，在通过下移，调整堆结构
+         */
+        for (int i = length - 1; i > 0; i--) {
             swap(arr, 0, i);
             shiftDown(arr, i, 0);
         }
@@ -55,19 +58,19 @@ public class HeapSort {
     }
 
     // 原始的shiftDown过程
-    private static void shiftDown(Comparable[] arr, int n, int k) {
+    private static void shiftDown(Comparable[] arr, int length, int index) {
 
-        while (2 * k + 1 < n) {
+        while (2 * index + 1 < length) {
             //左孩子节点
-            int j = 2 * k + 1;
+            int swapIndex = 2 * index + 1;
             //右孩子节点比左孩子节点大
-            if (j + 1 < n && arr[j + 1].compareTo(arr[j]) > 0)
-                j += 1;
+            if (swapIndex + 1 < length && arr[swapIndex + 1].compareTo(arr[swapIndex]) > 0)
+                swapIndex += 1;
             //比两孩子节点都大
-            if (arr[k].compareTo(arr[j]) >= 0) break;
+            if (arr[index].compareTo(arr[swapIndex]) >= 0) break;
             //交换原节点和孩子节点的值
-            swap(arr, k, j);
-            k = j;
+            swap(arr, index, swapIndex);
+            index = swapIndex;
         }
     }
 

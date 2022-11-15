@@ -4,5 +4,8 @@ plugins {
 
 dependencies{
     compile project(":utils-module")
-    compile 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
+    compile ('org.springframework.boot:spring-boot-starter-web:'+spring_boot_version ){
+        exclude group: 'ch.qos.logback'
+        exclude group: 'org.apache.logging.log4j'
+    }
 }

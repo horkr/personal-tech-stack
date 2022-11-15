@@ -131,7 +131,7 @@ public class MaxHeap<T extends Comparable<T>> {
      * @param index 索引
      */
     public void shiftDown(int index) {
-        // 当左边子节点小于，总元素个数，大于时已经没法再下移了
+        // 当左边子节点小于总元素个数，大于时已经没法再下移了
         while (leftChildIndex(index) < size) {
             int leftChildIndex = leftChildIndex(index);
             int rightChildIndex = rightChildIndex(index);
