@@ -5,6 +5,7 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -12,9 +13,23 @@ import static java.util.Objects.isNull;
 
 /**
  * 树工具类
+ *
  * @author llh
  */
 public class TreeUtil {
+
+    /**
+     * 计算树节点总数
+     * @param root  root
+     * @param obtainChildrenFunction    obtainChildrenFunction
+     * @param <T>
+     * @return  long
+     */
+    public static <T> long countTree(T root, Function<T, Collection<T>> obtainChildrenFunction) {
+        AtomicLong count = new AtomicLong();
+        traverseTreeNodeAndConsume(root, obtainChildrenFunction, node -> count.getAndIncrement());
+        return count.get();
+    }
 
     /**
      * 遍历树，并附加操作
@@ -43,6 +58,7 @@ public class TreeUtil {
             }
         }
     }
+
     /**
      * 遍历树，并附加操作
      *

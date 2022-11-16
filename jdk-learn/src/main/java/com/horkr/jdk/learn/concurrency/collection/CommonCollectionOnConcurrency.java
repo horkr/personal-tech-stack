@@ -1,17 +1,16 @@
 package com.horkr.jdk.learn.concurrency.collection;
 
+import com.horkr.util.ThreadUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import java.util.concurrent.DelayQueue;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 并发常用集合
- *
+ * https://jcjspmsqiu.feishu.cn/wiki/wikcnGVhbL13WbtT9y9FVJbXVUd#
  * @author 卢亮宏
  */
 public class CommonCollectionOnConcurrency {
@@ -32,7 +31,10 @@ public class CommonCollectionOnConcurrency {
         }
     }
 
-
+    /**
+     * 基于优先队列 PriorityQueue 实现，每个任务按照一定延迟后才会被获取到
+     * @throws InterruptedException
+     */
     private static void delayQueue() throws InterruptedException {
         DelayQueue<DelayedTask> queue = new DelayQueue<>();
         TimeUnit timeUnit = TimeUnit.SECONDS;
@@ -45,6 +47,43 @@ public class CommonCollectionOnConcurrency {
             log.info(queue.take().getRunningTime());
         }
     }
+
+    /**
+     * 用于两个线程交换数据，类似于Exchanger的功能,可以理解成一个线程手把手把东西交给另一个线程，如果没有另一个线程则拿在手里等着。如果没有另一个线程在等待take()，那么put()也会一直等着。类似于Exchanger的功能。主要用于线程池
+     * @throws InterruptedException
+     */
+    private static void synchronousQueue() throws InterruptedException {
+        SynchronousQueue<Integer> queue = new SynchronousQueue<>();
+        queue.put(1);
+    }
+
+
+    private static void transferQueue() throws InterruptedException {
+        LinkedTransferQueue<Integer> transferQueue = new LinkedTransferQueue<>();
+        ThreadUtil.startByNewThread("t1",()->{
+            try {
+                Integer take = transferQueue.take();
+                log.info("取到：{}",take);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        ThreadUtil.startByNewThread("t1",()->{
+            try {
+                transferQueue.transfer(8943);
+                log.info("投放的元素已经被取走");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        transferQueue();
+    }
+
+
 
     public static class DelayedTask implements Delayed {
 
@@ -79,7 +118,5 @@ public class CommonCollectionOnConcurrency {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        delayQueue();
-    }
+
 }
