@@ -1,5 +1,6 @@
 dependencies {
     compile 'org.apache.commons:commons-lang3:' + commons_lang3_version
+    compile 'commons-io:commons-io:2.4'
     compile 'commons-collections:commons-collections:' + commons_collections_version
     compile 'commons-beanutils:commons-beanutils:' + commons_beanutils_version
     compile 'cn.hutool:hutool-all:' + hutool_version
