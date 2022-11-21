@@ -1,5 +1,6 @@
 package com.horkr.util.excel;
 
+import cn.hutool.poi.excel.BigExcelWriter;
 import cn.hutool.poi.excel.ExcelWriter;
 import cn.hutool.poi.excel.StyleSet;
 import cn.hutool.poi.excel.WorkbookUtil;
@@ -67,6 +68,13 @@ public class PoiExcelUtil {
         cellStyle.setShrinkToFit(true);//设置文本收缩至合适
     }
 
+    public static void fold(File file, Map<Integer, Integer> foldMap) throws Exception {
+        Workbook book = WorkbookUtil.createBook(file);
+        Sheet one = WorkbookUtil.getOrCreateSheet(book, 0);
+        foldMap.forEach(one::groupRow);
+        cn.hutool.poi.excel.ExcelWriter writer = one.getLastRowNum() > 1000 ? new BigExcelWriter(one) : new cn.hutool.poi.excel.ExcelWriter(one);
+        writer.flush(file);
+    }
 
     public static void resetCellStyle(CellStyle cellStyle) {
         // 背景颜色
