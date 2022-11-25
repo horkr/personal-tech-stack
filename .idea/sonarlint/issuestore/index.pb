@@ -44,8 +44,6 @@ dcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service_decouplin
 pcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service_decoupling/NetflixFeignAopProxyConfig.java,8\0\80499e8242ba341d5bf9dde53293e94d08d160f8
 ‰
 Ycloud-service-consumer/src/main/java/com/horkr/cloud/consumer/sentinel/ExceptionUtil.java,5\1\51dc5e6c157ef413f6c108c84a6a728162cf45fb
-t
-Dspring-learn/src/main/java/com/horkr/spring/learn/spel/SpelDemo.java,9\3\932dd2df244d06dce79915d2f70f7b15e2c51e3a
 –
 fcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/feign_wrap/CustomFeignConfiguration.java,7\6\7602bbe34b2b6629605827cdbe4e75d9769eca9a
 •
@@ -116,3 +114,5 @@ ejdk-learn/src/main/java/com/horkr/jdk/learn/concurrency/collection/CommonCollec
 Mjdk-learn/src/main/java/com/horkr/jdk/learn/concurrency/thread_pool/Demo.java,5\1\51869abe1e4f72752565436718cd5850313bb4e8
 I
 utils-module/build.gradle,4\a\4aee52ed3500b58b0bf2e4df2f88bbad4370348d
+~
+Nutils-module/src/main/java/com/horkr/util/load_balance/IpHashLoadBalancer.java,e\4\e49a6bfa8df38f4a8410d50af7da79d2df1703f6

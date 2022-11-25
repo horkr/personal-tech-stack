@@ -2,7 +2,18 @@
 
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
+    compile 'org.springframework.boot:spring-boot-starter:'+spring_boot_version
+//    compile 'org.springframework:spring-tx:3.1.2.RELEASE'
     compile (project(":algorithm")){
         exclude group:'ch.qos.logback'
+        exclude group:'org.slf4j'
     }
+    compile ('org.mybatis.spring.boot:mybatis-spring-boot-starter:'+mybatis_version){
+        exclude group:'ch.qos.logback'
+        exclude group:'org.slf4j'
+        exclude group:'org.springframework.boot',module:'spring-boot-starter'
+    }
+    compile 'com.baomidou:mybatis-plus-annotation:'+mybatis_plus_version
+    compile 'com.baomidou:mybatis-plus-core:'+mybatis_plus_version
+    compile 'mysql:mysql-connector-java:'+mysql_version
 }

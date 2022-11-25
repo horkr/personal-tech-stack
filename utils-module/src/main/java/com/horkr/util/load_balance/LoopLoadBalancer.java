@@ -1,9 +1,7 @@
 package com.horkr.util.load_balance;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.LongAdder;
 
 /**
  * @author 卢亮宏
