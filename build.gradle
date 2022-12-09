@@ -47,7 +47,9 @@ subprojects {
         mybatis_plus_version = "3.1.2"
         mysql_version = "8.0.17"
         druid_version = "1.1.9"
-
+        mapstruct_version = "1.5.3.Final"
+        kafka_version ="2.2.7.RELEASE"
+        swagger_version ="2.7.0"
     }
 
 //    dependencies {

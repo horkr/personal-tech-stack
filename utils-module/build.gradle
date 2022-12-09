@@ -20,4 +20,6 @@ dependencies {
     compile('org.apache.poi:poi:' + poi_version)
     compile('org.apache.poi:poi-ooxml:' + poi_version)
     compile('org.apache.poi:poi-ooxml-schemas:' + poi_version)
+    compile('org.mapstruct:mapstruct:' + mapstruct_version)
+    compile('org.mapstruct:mapstruct-processor:' + mapstruct_version)
 }
