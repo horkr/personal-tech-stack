@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency.cache_line;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 /**
  * @author 卢亮宏

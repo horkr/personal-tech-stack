@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency._synchronized;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 import java.util.concurrent.TimeUnit;
 

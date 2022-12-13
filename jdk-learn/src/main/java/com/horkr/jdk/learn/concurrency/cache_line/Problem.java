@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency.cache_line;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 /**
  * 如下代码，定义了2位的数组，开启两个线程分别修改其中一个数据。理论上是两个cpu处理两个资源，不会产生一致性问题。

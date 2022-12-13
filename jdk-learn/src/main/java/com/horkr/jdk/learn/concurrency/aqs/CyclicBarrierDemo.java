@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency.aqs;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

@@ -1,6 +1,6 @@
 package com.horkr.algorithm.limit_request;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

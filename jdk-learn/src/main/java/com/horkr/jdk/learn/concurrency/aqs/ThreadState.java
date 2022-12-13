@@ -1,11 +1,9 @@
 package com.horkr.jdk.learn.concurrency.aqs;
 
-import com.horkr.util.ThreadUtil;
-
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
-import static com.horkr.util.ThreadUtil.*;
+import static com.horkr.util.thread.ThreadUtil.*;
 
 /**
  * 线程状态

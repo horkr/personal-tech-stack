@@ -50,9 +50,10 @@ public class KafkaProducerController {
      */
     @GetMapping("/sendBatchMessage")
     public void sendBatchMessage(int messageSize) {
-        int partition = 3;
+        int partitionSize = 3;
         for (int i = 0; i < messageSize; i++) {
-            kafkaTemplate.send("local-topic1", String.valueOf(i % partition), RandomStringUtils.random(4));
+            int partition = i % partitionSize;
+            kafkaTemplate.send("local-topic1", partition, String.valueOf(i), RandomStringUtils.random(3,"abcdefghijklmnopquvwxyzrst"));
         }
         log.info("send success!");
     }

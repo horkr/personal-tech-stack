@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency.collection;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 import java.util.ArrayList;
 import java.util.List;

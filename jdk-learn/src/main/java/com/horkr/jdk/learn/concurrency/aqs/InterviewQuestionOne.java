@@ -1,6 +1,6 @@
 package com.horkr.jdk.learn.concurrency.aqs;
 
-import com.horkr.util.ThreadUtil;
+import com.horkr.util.thread.ThreadUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 
-import static com.horkr.util.ThreadUtil.*;
+import static com.horkr.util.thread.ThreadUtil.*;
 
 /**
  * 开始阅读aqs源码

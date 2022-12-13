@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.horkr.util.ThreadUtil.*;
+import static com.horkr.util.thread.ThreadUtil.*;
 
 /**
  * 将List改造为固定容量同步容器，拥有put和get方法，以及getCount方法（不用size()），能够支持2个生产者线程以及10个消费者线程的阻塞调用
