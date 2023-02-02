@@ -50,6 +50,7 @@ subprojects {
         mapstruct_version = "1.5.3.Final"
         kafka_version ="2.2.7.RELEASE"
         swagger_version ="2.7.0"
+        rocketmq_version ="1.0.0.RELEASE"
     }
 
 //    dependencies {

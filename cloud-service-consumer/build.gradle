@@ -6,7 +6,8 @@ dependencies {
     implementation 'com.alibaba.csp:sentinel-annotation-aspectj:'+sentinel_version
     implementation 'com.alibaba.csp:sentinel-transport-simple-http:'+sentinel_version
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel:'+spring_sentinel_version
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:'+spring_boot_version
+//    implementation 'org.springframework.boot:spring-boot-starter-actuator:'+spring_boot_version
+    implementation 'org.springframework.boot:spring-boot-autoconfigure:'+spring_boot_version
 //    解决流控链路不生效的问题
     implementation 'com.alibaba.csp:sentinel-web-servlet:'+sentinel_version
     compile project(':cloud-service-common')

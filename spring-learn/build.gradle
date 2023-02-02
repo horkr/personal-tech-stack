@@ -3,6 +3,7 @@
 dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web:'+spring_boot_version
     compile 'org.springframework.boot:spring-boot-starter:'+spring_boot_version
+    compile 'org.springframework.boot:spring-boot-loader:'+spring_boot_version
 //    compile 'org.springframework:spring-tx:3.1.2.RELEASE'
     compile (project(":algorithm")){
         exclude group:'ch.qos.logback'
@@ -19,4 +20,12 @@ dependencies {
     compile 'org.springframework.kafka:spring-kafka:'+kafka_version
     compile 'io.springfox:springfox-swagger2:'+swagger_version
     compile 'io.springfox:springfox-swagger-ui:'+swagger_version
+    compile ('org.rocketmq:rocketmq-spring-boot-starter:'+rocketmq_version){
+        exclude group:'ch.qos.logback'
+        exclude group:'org.slf4j'
+        exclude group:'org.springframework.boot',module:'spring-boot-starter'
+        exclude group:'org.apache.logging.log4j'
+        exclude group:'org.apache.logging.log4j'
+    }
+
 }

@@ -1,0 +1,16 @@
+
+
+#spring.cloud.nacos.discovery.ephemeral=false
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ephemeral: false
+  profiles:
+    active: local
+
+
+
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration,

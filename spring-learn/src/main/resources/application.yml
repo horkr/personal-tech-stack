@@ -30,6 +30,8 @@ spring:
       type: batch
       ack-mode: manual
     bootstrap-servers: localhost:9092
+  rocketmq:
+    name-server: 127.0.0.1:9876
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:

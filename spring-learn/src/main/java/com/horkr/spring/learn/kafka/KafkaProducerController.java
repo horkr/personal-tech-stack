@@ -3,7 +3,6 @@ package com.horkr.spring.learn.kafka;
 import com.horkr.util.dto.PairData;
 import io.swagger.annotations.Api;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.Random;
-import java.util.UUID;
 
 /**
  * @author 卢亮宏

@@ -31,7 +31,7 @@ public class KafkaConsumerListener {
      *
      * @param records 消息集合
      */
-    @KafkaListener(id = LISTENER_ID, groupId = "local-consumer-group", topics = TOPICS, autoStartup = "true", concurrency = "1")
+    @KafkaListener(id = LISTENER_ID, groupId = "local-consumer-group", topics = TOPICS, autoStartup = "false", concurrency = "1")
     public void listener(ConsumerRecords<String, String> records, Consumer<String, String> consumer, Acknowledgment ack) {
         log.info("接收到消息条数：{}", records.count());
         defaultConsume(records, ack);

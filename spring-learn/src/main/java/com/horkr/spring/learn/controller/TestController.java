@@ -37,6 +37,11 @@ public class TestController {
         return null;
     }
 
+    @GetMapping("/data")
+    public Object data() {
+        return "some thing return";
+    }
+
 
     @GetMapping("/test")
     public Object test() {

@@ -24,8 +24,6 @@ Zcloud-service-gateway/src/main/java/com/horkr/cloud/gateway/ServiceGatewayAppli
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-Ö
-Ucloud-service-common/src/main/java/com/horkr/cloud/eureka/common/dto/BusinessDto.java,e\3\e306e16eb253a4e9b59ad8cebb9ed6c66b6681ec
 ü
 ocloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service_decoupling/MicroserviceSwitchService.java,6\7\6700c035f223c8533477ebf24ca7b889df8d0cc8
 ì
@@ -48,18 +46,10 @@ fcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/feign_wrap/Custom
 ecloud-service-consumer/src/main/java/com/horkr/cloud/consumer/feign_wrap/CustomInvocationHandler.java,3\9\39b89b7303691a9f668dd7681d2d6a8c62989606
 á
 Wcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/feign_wrap/WrapFeign.java,3\e\3ea9b126b03dc390157b47667ee1b536d9dd9081
-â
-Ycloud-service-common/src/main/java/com/horkr/cloud/eureka/common/service/CommonFeign.java,3\7\37cc40340801080f776fe2fadb886cb64236971d
-é
-^cloud-service-common/src/main/java/com/horkr/cloud/eureka/common/config/CommonFeignConfig.java,a\b\ab0b54569655fba6eea7d04aa71878941ff1be9a
-ò
-hcloud-service-common/src/main/java/com/horkr/cloud/eureka/common/interceptor/CommonFeignInterceptor.java,c\1\c1f2141c2812c25619d3d8caaa640ed4baee9ba5
 ä
 Zcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service/ConsumerService.java,f\1\f1a8fca4e55c026144cea1f2b3a9ab74da6764c6
 û
 ncloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service/MicroserviceSwitchConfigServiceImpl.java,b\7\b72099e721143151ac35b1e4396d08f0bdc776b1
-ê
-`cloud-service-consumer/src/main/java/com/horkr/cloud/consumer/controller/ConsumerController.java,f\6\f63eaabff57060a4f5073a17dd7059456aff9de1
 ú
 lcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/controller/SentinelHardCodeDemoController.java,e\1\e1a79e1395b8e353b381974c2c3b94efe7845fbc
 å
@@ -84,8 +74,6 @@ w
 Galgorithm/src/main/java/com/horkr/algorithm/verification/UdpVerify.java,7\0\706dfbe9d441c05e8201da8bfebdb2a68d5695b0
 y
 Ialgorithm/src/main/java/com/horkr/algorithm/verification/SplitVerify.java,9\e\9e26f4b1db904235a69cd28e218646e5eb71a297
-ç
-]cloud-service-consumer/src/main/java/com/horkr/cloud/consumer/ServiceConsumerApplication.java,5\9\591af00a3932ce8550693b5a512e8a554ed3b0c6
 {
 Kalgorithm/src/main/java/com/horkr/algorithm/limit_request/RequestLimit.java,8\d\8da32360f1809633600d739ba5687873d80b41a9
 v
@@ -120,5 +108,21 @@ z
 Jalgorithm/src/main/java/com/horkr/algorithm/verification/NumberVerify.java,3\f\3f20c9191e69c68b57b0968f1da723dde3f47a61
 M
 Lua/src/http/http_connect.lua,1\d\1ddd18df50e37aaeea85d54b069b2cb3dd877f85
-I
-utils-module/build.gradle,4\a\4aee52ed3500b58b0bf2e4df2f88bbad4370348d
+Ä
+Pspring-learn/src/main/java/com/horkr/spring/learn/controller/TestController.java,0\2\02bd4672e9f2a290d4aa7f81438e8c3c0dc7ad6a
+}
+Mspring-learn/src/main/java/com/horkr/spring/learn/SpringLearnApplication.java,b\f\bfe9ffee036b3477bab8820ebca5285c7ee5d634
+Ñ
+Tspring-learn/src/main/java/com/horkr/spring/learn/kafka/KafkaProducerController.java,1\5\156269279199fbf37ec93927bf215cafc20dc7c3
+Ç
+Rspring-learn/src/main/java/com/horkr/spring/learn/kafka/KafkaConsumerListener.java,4\3\43fe9213e7f757f67bc10c3d1cc73c592ff8bbad
+n
+>algorithm/src/main/java/com/horkr/algorithm/lru/LRUCache1.java,c\0\c0c0fde9648fadd6cb349b0e2aad30974da0af8b
+Å
+Qspring-learn/src/main/java/com/horkr/spring/learn/rocketmq/producer/Producer.java,8\5\852eb36fc4959e9c510590217314499cececfc70
+Å
+Qspring-learn/src/main/java/com/horkr/spring/learn/rocketmq/producer/Consumer.java,5\5\5574524e0b754a2a7f7020720ca397eb2732e616
+á
+Wspring-learn/src/main/java/com/horkr/spring/learn/rocketmq/producer/TransactionMsg.java,3\6\360457a2d72af5e2de9a8a4969de51d5efbdf959
+à
+Xspring-learn/src/main/java/com/horkr/spring/learn/rocketmq/producer/ProducerFactory.java,f\0\f09742369a0cedd1a1b792dd8f0c306a65c0c584
