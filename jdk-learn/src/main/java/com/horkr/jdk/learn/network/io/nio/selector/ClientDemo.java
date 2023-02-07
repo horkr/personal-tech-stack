@@ -13,7 +13,7 @@ public class ClientDemo {
     public static void main(String[] args) throws Exception {
         SocketChannel socketChannel = SocketChannel.open();
         socketChannel.configureBlocking(false);
-        if (!socketChannel.connect(new InetSocketAddress("127.0.0.1", 10002))) {
+        if (!socketChannel.connect(new InetSocketAddress("127.0.0.1", 9090))) {
             while (!socketChannel.finishConnect()) {
                 log.info("客户端连接中...");
             }
