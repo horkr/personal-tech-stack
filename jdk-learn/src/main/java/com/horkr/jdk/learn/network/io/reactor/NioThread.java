@@ -80,6 +80,7 @@ public class NioThread extends Thread {
                 log.info("事件发生---------------------------------------");
                 if (num > 0) {
                     Set<SelectionKey> selectionKeys = selector.selectedKeys();
+                    log.info("selectionKeys set hashcode:{}",selectionKeys.hashCode());
                     // 处理发生的事件
                     processSelectionKeys(selectionKeys);
                 }
@@ -122,7 +123,7 @@ public class NioThread extends Thread {
         Iterator<SelectionKey> iterator = selectionKeys.iterator();
         while (iterator.hasNext()) {
             SelectionKey selectionKey = iterator.next();
-            // 为什么要remove？
+            // 为什么要remove? 因为selectionKey总是一个对象。selector.selectedKeys()不会产生新的对象，如果不remove，下次会重新处理
             iterator.remove();
             if (selectionKey.isAcceptable()) {
                 processAccept(selectionKey);
@@ -143,9 +144,9 @@ public class NioThread extends Thread {
         log.info("发生读事件");
         ByteBuffer buffer = (ByteBuffer) selectionKey.attachment();
         SocketChannel channel = (SocketChannel) selectionKey.channel();
-        // 为啥要clear
+        // 为啥要clear？clear是重新归位limit和position的位置，可能之前对这个attach的buffer有过操作，导致结果不对！这里要把channel的数据写入到buffer中，clear后相当于一个新的buffer
         buffer.clear();
-        // 为啥要loop
+        // 为啥要loop,因为 channel.read(buffer)会将数据从channel中写入到buffer，但是buffer大小个字节，如果channel里的数据大于buffer的大小，则要重新循环写.read变量为channel写入到buffer数据的size
         while (true) {
             try {
                 int read = channel.read(buffer);
@@ -153,7 +154,7 @@ public class NioThread extends Thread {
                     buffer.flip();
                     String msg = BufferUtil.readStr(buffer, StandardCharsets.UTF_8);
                     log.info("client {}：{}", channel.getRemoteAddress(), msg);
-                    // 将消息再发回去，为啥要loop
+                    // 将消息再发回去，为啥要loop，因为要保证一直到buffer的数据写完
                     while (buffer.hasRemaining()) {
                         channel.write(buffer);
                     }

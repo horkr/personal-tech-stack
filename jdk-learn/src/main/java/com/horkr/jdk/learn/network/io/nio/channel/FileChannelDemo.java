@@ -1,5 +1,6 @@
 package com.horkr.jdk.learn.network.io.nio.channel;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
@@ -7,13 +8,26 @@ import java.nio.channels.FileChannel;
 
 public class FileChannelDemo {
     private static void read() throws Exception {
-        FileInputStream fileInputStream = new FileInputStream("text.txt");
+        File file = new File("text.txt");
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        FileInputStream fileInputStream = new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
-        ByteBuffer byteBuffer = ByteBuffer.allocate(512);
-        channel.read(byteBuffer);
-        byteBuffer.flip();
-        while (byteBuffer.hasRemaining()) {
-            System.err.println((char) byteBuffer.get());
+        ByteBuffer byteBuffer = ByteBuffer.allocate(5);
+        while (true) {
+            int read = channel.read(byteBuffer);
+            System.out.print("read 大小" + read);
+            System.out.println("----------------");
+            if (read > 0) {
+                byteBuffer.flip();
+                while (byteBuffer.hasRemaining()) {
+                    System.err.println((char) byteBuffer.get());
+                }
+                byteBuffer.clear();
+            } else {
+                break;
+            }
         }
         fileInputStream.close();
     }
@@ -29,7 +43,8 @@ public class FileChannelDemo {
         channel.write(byteBuffer);
         fileOutputStream.close();
     }
-    public static void main(String[] args) throws Exception{
+
+    public static void main(String[] args) throws Exception {
         read();
     }
 }
