@@ -30,7 +30,7 @@ public class NioThread extends Thread {
     /**
      * 所属的threadGroup
      */
-    private NioThreadGroup threadGroup;
+    private NioThreadGroup nioThreadGroup;
 
     /**
      * 持有的channel，可以理解为创建的ServerChannel或者accept的SocketChannel分配给了当前线程处理
@@ -40,10 +40,14 @@ public class NioThread extends Thread {
     public NioThread(NioThreadGroup threadGroup) {
         try {
             this.selector = Selector.open();
-            this.threadGroup = threadGroup;
+            this.nioThreadGroup = threadGroup;
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }
+    }
+
+    public NioThreadGroup getNioThreadGroup() {
+        return nioThreadGroup;
     }
 
     /**
@@ -165,7 +169,7 @@ public class NioThread extends Thread {
                     break;
                 }
             } catch (IOException e) {
-                log.error("处理读事件时出错",e);
+                log.error("处理读事件时出错", e);
             }
         }
 
@@ -181,10 +185,11 @@ public class NioThread extends Thread {
         try {
             SocketChannel socketChannel = channel.accept();
             socketChannel.configureBlocking(false);
-            NioThread nioThread = threadGroup.allocateNioThread();
+            NioThread nioThread = nioThreadGroup.allocateNioThread(socketChannel);
             nioThread.addChannel(socketChannel);
+            // 唤醒NioThread  在没有注册任何事件到selector时，阻塞在select();
             nioThread.selector().wakeup();
-            log.info("发生accept事件,client {} 连接,此客户端由线程{}管理", socketChannel.getRemoteAddress(), nioThread.getName());
+            log.info("发生accept事件,client {} 连接,此客户端由线程{}管理", socketChannel.getRemoteAddress(),  nioThread.getName());
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

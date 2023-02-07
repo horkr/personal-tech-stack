@@ -6,7 +6,9 @@ package com.horkr.jdk.learn.network.io.reactor;
 public class Main {
 
     public static void main(String[] args) {
-        NioThreadGroup nioThreadGroup = new NioThreadGroup(5);
-        nioThreadGroup.createServer(9090);
+        NioThreadGroup bossGroup = new NioThreadGroup(1,"boss");
+        NioThreadGroup workerGroup = new NioThreadGroup(3,"worker");
+        bossGroup.setWorkerGroup(workerGroup);
+        bossGroup.createServer(9090);
     }
 }
