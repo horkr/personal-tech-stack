@@ -59,8 +59,6 @@ lcloud-service-consumer/src/main/java/com/horkr/cloud/consumer/service_decouplin
 `cloud-service-consumer/src/main/java/com/horkr/cloud/consumer/config/HttpRequestInterceptor.java,6\4\64d04d17bb1cdcc15aa5af02be3e9036b73a505a
 }
 Malgorithm/src/main/java/com/horkr/algorithm/verification/CollectionFirst.java,c\8\c82262d7c10b820cc65478300578d486f5d15132
-z
-Jalgorithm/src/main/java/com/horkr/algorithm/verification/JdkProxyMode.java,d\a\da75ae94e047db41a70b65afe4bc0bb5dbd0e183
 ~
 Nalgorithm/src/main/java/com/horkr/algorithm/verification/ObjConvertVerify.java,b\a\ba007518a606bac01fa8a2d8163ca2edb129ac1c
 t
