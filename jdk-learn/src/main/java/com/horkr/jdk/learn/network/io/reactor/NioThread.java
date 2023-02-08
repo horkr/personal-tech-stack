@@ -33,7 +33,8 @@ public class NioThread extends Thread {
     private NioThreadGroup nioThreadGroup;
 
     /**
-     * 持有的channel，可以理解为创建的ServerChannel或者accept的SocketChannel分配给了当前线程处理
+     * 持有的channel，可以理解为创建的ServerChannel或者accept的SocketChannel分配给了当前线程处理，后续负责对队列中的channel向selector进行注册‘
+     * @see NioThread#processTask()
      */
     private final LinkedBlockingQueue<Channel> channelQueue = new LinkedBlockingQueue<>();
 
@@ -80,7 +81,7 @@ public class NioThread extends Thread {
                 log.info("事件发生---------------------------------------");
                 if (num > 0) {
                     Set<SelectionKey> selectionKeys = selector.selectedKeys();
-                    log.info("selectionKeys set hashcode:{}",selectionKeys.hashCode());
+                    log.info("selectionKeys set hashcode:{}", selectionKeys.hashCode());
                     // 处理发生的事件
                     processSelectionKeys(selectionKeys);
                 }
@@ -190,7 +191,7 @@ public class NioThread extends Thread {
             nioThread.addChannel(socketChannel);
             // 唤醒NioThread  在没有注册任何事件到selector时，阻塞在select();
             nioThread.selector().wakeup();
-            log.info("发生accept事件,client {} 连接,此客户端由线程{}管理", socketChannel.getRemoteAddress(),  nioThread.getName());
+            log.info("发生accept事件,client {} 连接,此客户端由线程{}管理", socketChannel.getRemoteAddress(), nioThread.getName());
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

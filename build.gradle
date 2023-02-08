@@ -51,6 +51,7 @@ subprojects {
         kafka_version ="2.2.7.RELEASE"
         swagger_version ="2.7.0"
         rocketmq_version ="1.0.0.RELEASE"
+        netty_version="4.1.49.Final"
     }
 
 //    dependencies {
