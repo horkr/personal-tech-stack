@@ -8,4 +8,5 @@ dependencies{
         exclude group: 'ch.qos.logback'
         exclude group: 'org.apache.logging.log4j'
     }
+    compile 'io.netty:netty-all:'+netty_version
 }
