@@ -1,5 +1,7 @@
 package com.horkr.jdk.learn.network.netty.rpc.message;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,9 @@ import java.io.Serializable;
  * @author 卢亮宏
  */
 public class MessageBody implements Serializable {
+
+
+    private static final long serialVersionUID = 6889357952088138253L;
     /**
      * 调用的接口名称
      */
@@ -43,6 +48,11 @@ public class MessageBody implements Serializable {
         this.paramTypes = paramTypes;
         this.args = args;
         this.response = response;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 
     public String getInterfaceName() {

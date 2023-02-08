@@ -1,5 +1,7 @@
 package com.horkr.jdk.learn.network.netty.rpc.message;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.Serializable;
 
 /**
@@ -9,6 +11,7 @@ import java.io.Serializable;
  */
 public class MessageHeader implements Serializable {
 
+    private static final long serialVersionUID = -8441979685777852245L;
     /**
      * 标记，可以方状态等信息
      */
@@ -25,6 +28,10 @@ public class MessageHeader implements Serializable {
      */
     private long bodyLength;
 
+    @Override
+    public String toString() {
+       return JSON.toJSONString(this);
+    }
 
     public MessageHeader(int flag, long requestId, long bodyLength) {
         this.flag = flag;
