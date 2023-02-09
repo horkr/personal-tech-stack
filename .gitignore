@@ -3,6 +3,7 @@
 .DS_Store
 # Java class files
 *.class
+gradle.properties
 
 # Generated files
 #bin/
