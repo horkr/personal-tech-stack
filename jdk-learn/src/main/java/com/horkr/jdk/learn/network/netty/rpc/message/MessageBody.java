@@ -36,13 +36,13 @@ public class MessageBody implements Serializable {
     /**
      * 方法调用结果
      */
-    private Object response;
+    private String response;
 
 
     public MessageBody() {
     }
 
-    public MessageBody(String interfaceName, String methodName, Class<?>[] paramTypes, Object[] args, Object response) {
+    public MessageBody(String interfaceName, String methodName, Class<?>[] paramTypes, Object[] args, String response) {
         this.interfaceName = interfaceName;
         this.methodName = methodName;
         this.paramTypes = paramTypes;
@@ -91,7 +91,7 @@ public class MessageBody implements Serializable {
         return response;
     }
 
-    public void setResponse(Object response) {
+    public void setResponse(String response) {
         this.response = response;
     }
 }

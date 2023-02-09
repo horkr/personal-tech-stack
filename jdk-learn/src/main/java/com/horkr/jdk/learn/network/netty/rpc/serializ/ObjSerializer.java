@@ -17,20 +17,18 @@ public class ObjSerializer {
             objectOutputStream.close();
             return bytes;
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
 
-    public static<T> T bytes2Obj(byte[] bytes,Class<T> tClass) {
+    public static <T> T bytes2Obj(byte[] bytes, Class<T> tClass) {
         try {
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
             return (T) objectInputStream.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
+        }  catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        return null;
     }
 }

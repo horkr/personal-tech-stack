@@ -19,7 +19,7 @@ public class RpcServer {
 
     public void start(){
         ChannelFuture bind = new ServerBootstrap()
-                .group(new NioEventLoopGroup(10))
+                .group(new NioEventLoopGroup(1),new NioEventLoopGroup(1))
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override

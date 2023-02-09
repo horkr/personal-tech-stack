@@ -18,6 +18,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.net.InetSocketAddress;
+import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -36,9 +37,9 @@ public class RpcProxyFactory {
                 MessageBody messageBody = new MessageBody(clazz.getName(), method.getName(), method.getParameterTypes(), args, null);
                 byte[] bodyBytes = ObjSerializer.obj2Bytes(messageBody);
                 // 清空输出流
-                MessageHeader messageHeader = new MessageHeader(RandomUtils.nextInt(), RandomUtils.nextLong(), bodyBytes.length);
+//                MessageHeader messageHeader = new MessageHeader(RandomUtils.nextInt(), RandomUtils.nextLong(), bodyBytes.length);
+                MessageHeader messageHeader = new MessageHeader(0x14141414,Math.abs(UUID.randomUUID().getLeastSignificantBits()), bodyBytes.length);
                 byte[] headerBytes = ObjSerializer.obj2Bytes(messageHeader);
-                log.info("header size:{}", headerBytes.length);
                 //2，requestID+message  ，本地要缓存
 
 

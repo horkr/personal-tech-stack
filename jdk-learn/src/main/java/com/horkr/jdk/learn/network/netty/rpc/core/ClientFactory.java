@@ -2,10 +2,13 @@ package com.horkr.jdk.learn.network.netty.rpc.core;
 
 import cn.hutool.core.util.RandomUtil;
 import com.horkr.jdk.learn.network.netty.rpc.handler.ClientHandler;
+import com.horkr.jdk.learn.network.netty.rpc.handler.ServerHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,6 +19,7 @@ import static java.util.Objects.isNull;
  * @author 卢亮宏
  */
 public class ClientFactory {
+    public final Logger log = LoggerFactory.getLogger(ClientFactory.class);
     private static final ClientFactory instance;
 
     private static int poolSize;
@@ -31,7 +35,7 @@ public class ClientFactory {
     private static ConcurrentHashMap<InetSocketAddress, ClientPool> cache = new ConcurrentHashMap(poolSize);
 
 
-    public NioSocketChannel getClient(InetSocketAddress address) {
+    public synchronized NioSocketChannel getClient(InetSocketAddress address) {
         ClientPool clientPool = cache.get(address);
         if (isNull(clientPool)) {
             clientPool = new ClientPool(poolSize);
@@ -44,6 +48,7 @@ public class ClientFactory {
             synchronized (lock) {
                 if (isNull(client)) {
                     client = createClient(address);
+                    log.info("创建了新的客户端：{}",client.localAddress());
                     clientPool.getPool().set(clientIndex, client);
                 }
             }

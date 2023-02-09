@@ -3,6 +3,7 @@ package com.horkr.spring.learn.transaction;
 import com.horkr.spring.learn.dao.PeopleMapper;
 import com.horkr.spring.learn.dto.People;
 import com.horkr.util.thread.ThreadUtil;
+import com.horkr.util.trace.StackTraceUtil;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class PeopleService {
@@ -44,6 +47,13 @@ public class PeopleService {
     public void updateError() {
         insert(RandomUtils.nextInt());
         int a = 1 / 0;
+    }
+
+
+    public List<Map> queryAll(){
+        List<String> callChain = StackTraceUtil.getCallChain();
+        callChain.forEach(log::info);
+        return mapper.selectPeople();
     }
 
 

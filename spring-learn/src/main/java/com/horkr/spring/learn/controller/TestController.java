@@ -6,6 +6,7 @@ import com.horkr.spring.learn.event.CustomEvent;
 import com.horkr.spring.learn.messagesource.MessageUtil;
 import com.horkr.spring.learn.messagesource.MsgConstants;
 import com.horkr.spring.learn.messagesource.PatternMessageSource;
+import com.horkr.spring.learn.transaction.PeopleService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,9 @@ public class TestController {
 
     @Resource
     private PatternMessageSource messageSource;
+
+    @Resource
+    private PeopleService peopleService;
 
     SlidingTimeWindowLimiter slidingTimeWindowLimiter = new SlidingTimeWindowLimiter(10, 5, 1000);
 
@@ -62,12 +66,18 @@ public class TestController {
     public Object leakyBucketTest() throws Exception {
         if (leakyBucket.canPass()) {
             double qpsDoubleValue = Double.parseDouble(String.valueOf(2000));
-            double speed = 1/qpsDoubleValue;
+            double speed = 1 / qpsDoubleValue;
             double time = speed * 1000;
-            return time+"::"+(long)time;
-        }else {
+            return time + "::" + (long) time;
+        } else {
             throw new IllegalStateException("block");
         }
 
     }
+
+    @GetMapping("/queryPeople")
+    public Object queryPeople() {
+        return peopleService.queryAll();
+    }
+
 }

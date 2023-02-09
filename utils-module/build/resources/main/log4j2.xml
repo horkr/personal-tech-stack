@@ -18,9 +18,10 @@ monitorInterval : Log4j能够自动检测修改配置文件和重新配置本身
         <logger name="org.springframework" level="ERROR"/>
         <logger name="org.mybatis" level="ERROR"/>
         <Logger name="org.apache" level="ERROR"/>
-<!--        <AsyncRoot level="info" includeLocation="true">-->
-<!--            <AppenderRef ref="console"/>-->
-<!--        </AsyncRoot>-->
+        <root level="info" includeLocation="true">
+            <AppenderRef ref="console"/>
+        </root>
+
 
     </Loggers>
 
