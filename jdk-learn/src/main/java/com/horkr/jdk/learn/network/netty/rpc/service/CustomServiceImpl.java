@@ -1,7 +1,5 @@
 package com.horkr.jdk.learn.network.netty.rpc.service;
 
-import com.horkr.jdk.learn.network.netty.rpc.bo.CustomBo;
-import com.horkr.jdk.learn.network.netty.rpc.core.RpcProxyFactory;
 import com.horkr.util.thread.ThreadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,14 +10,11 @@ public class CustomServiceImpl implements CustomService {
     public final Logger log = LoggerFactory.getLogger(CustomServiceImpl.class);
 
     @Override
-    public void update(int num) {
+    public String update(int num) {
         ThreadUtil.sleep(1, TimeUnit.SECONDS);
         log.info("执行了更新--------------------");
+        return "server updated: " + num;
     }
 
-    @Override
-    public CustomBo query(String id) {
-        ThreadUtil.sleep(1, TimeUnit.SECONDS);
-        return new CustomBo("tom", 23);
-    }
+
 }

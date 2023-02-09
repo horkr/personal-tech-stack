@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 响应回调管理器
  */
-public class ResponseCallBackManager {
+public class ResponseCallBackManagerV1 {
 
     /**
      * key：远程调用请求ID  value：对应回调逻辑

@@ -2,6 +2,8 @@ package com.horkr.jdk.learn.network.netty.rpc.core;
 
 import cn.hutool.core.util.RandomUtil;
 import com.horkr.jdk.learn.network.netty.rpc.handler.ClientHandler;
+import com.horkr.jdk.learn.network.netty.rpc.handler.DecodeHandlerV1;
+import com.horkr.jdk.learn.network.netty.rpc.handler.DecodeHandlerV2;
 import com.horkr.jdk.learn.network.netty.rpc.handler.ServerHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -48,7 +50,7 @@ public class ClientFactory {
             synchronized (lock) {
                 if (isNull(client)) {
                     client = createClient(address);
-                    log.info("创建了新的客户端：{}",client.localAddress());
+                    log.info("创建了新的客户端：{}", client.localAddress());
                     clientPool.getPool().set(clientIndex, client);
                 }
             }
@@ -65,6 +67,7 @@ public class ClientFactory {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                         ChannelPipeline pipeline = ch.pipeline();
+                        pipeline.addLast(new DecodeHandlerV2());
                         pipeline.addLast(new ClientHandler());
                     }
                 })

@@ -19,6 +19,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.net.InetSocketAddress;
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -38,7 +39,7 @@ public class RpcProxyFactory {
                 byte[] bodyBytes = ObjSerializer.obj2Bytes(messageBody);
                 // 清空输出流
 //                MessageHeader messageHeader = new MessageHeader(RandomUtils.nextInt(), RandomUtils.nextLong(), bodyBytes.length);
-                MessageHeader messageHeader = new MessageHeader(0x14141414,Math.abs(UUID.randomUUID().getLeastSignificantBits()), bodyBytes.length);
+                MessageHeader messageHeader = new MessageHeader(100, Math.abs(UUID.randomUUID().getLeastSignificantBits()), bodyBytes.length);
                 byte[] headerBytes = ObjSerializer.obj2Bytes(messageHeader);
                 //2，requestID+message  ，本地要缓存
 
@@ -51,16 +52,19 @@ public class RpcProxyFactory {
                 byteBuf.writeBytes(headerBytes);
                 byteBuf.writeBytes(bodyBytes);
                 log.info("远程调用已发起，等待返回！RequestId:{},Interface:{} Method:{}", messageHeader.getRequestId(), clazz.getName(), method.getName());
-                CountDownLatch countDownLatch = new CountDownLatch(1);
-                ResponseCallBackManager.registerCallBack(messageHeader.getRequestId(), () -> {
-                    countDownLatch.countDown();
-                    log.info("执行服务端响应回调函数-----");
-                });
+//                CountDownLatch countDownLatch = new CountDownLatch(1);
+//                ResponseCallBackManagerV1.registerCallBack(messageHeader.getRequestId(), () -> {
+//                    countDownLatch.countDown();
+//                    log.info("执行服务端响应回调函数-----");
+//                });
+
+                CompletableFuture<String> future = new CompletableFuture<>();
+                ResponseCallBackManagerV2.registerCallBack(messageHeader.getRequestId(), future);
                 ChannelFuture writeFuture = client.writeAndFlush(byteBuf);
                 writeFuture.sync();
-                countDownLatch.await();
-                //5，？，如果从IO ，未来回来了，怎么将代码执行到这里
-                return proxy;
+//                countDownLatch.await();
+                //5，这里要返回从服务端返回的执行结果。如果从IO ，未来回来了，怎么将代码执行到这里
+                return future.get();
             }
         };
         return (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, invocationHandler);
