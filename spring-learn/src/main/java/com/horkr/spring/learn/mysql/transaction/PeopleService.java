@@ -1,6 +1,6 @@
-package com.horkr.spring.learn.transaction;
+package com.horkr.spring.learn.mysql.transaction;
 
-import com.horkr.spring.learn.dao.PeopleMapper;
+import com.horkr.spring.learn.mysql.dao.PeopleMapper;
 import com.horkr.spring.learn.dto.People;
 import com.horkr.util.thread.ThreadUtil;
 import com.horkr.util.trace.StackTraceUtil;

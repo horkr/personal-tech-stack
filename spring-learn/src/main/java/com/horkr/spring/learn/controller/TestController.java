@@ -6,7 +6,7 @@ import com.horkr.spring.learn.event.CustomEvent;
 import com.horkr.spring.learn.messagesource.MessageUtil;
 import com.horkr.spring.learn.messagesource.MsgConstants;
 import com.horkr.spring.learn.messagesource.PatternMessageSource;
-import com.horkr.spring.learn.transaction.PeopleService;
+import com.horkr.spring.learn.mysql.transaction.PeopleService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;

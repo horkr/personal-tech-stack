@@ -1,6 +1,6 @@
-package com.horkr.spring.learn.transaction;
+package com.horkr.spring.learn.mysql.transaction;
 
-import com.horkr.spring.learn.dao.PeopleMapper;
+import com.horkr.spring.learn.mysql.dao.PeopleMapper;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

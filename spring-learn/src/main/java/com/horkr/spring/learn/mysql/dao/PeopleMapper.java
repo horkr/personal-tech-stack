@@ -1,4 +1,4 @@
-package com.horkr.spring.learn.dao;
+package com.horkr.spring.learn.mysql.dao;
 
 import com.horkr.spring.learn.dto.People;
 import org.apache.ibatis.annotations.Mapper;
