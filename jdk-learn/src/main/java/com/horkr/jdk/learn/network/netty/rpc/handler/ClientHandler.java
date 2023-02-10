@@ -7,6 +7,11 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 客户端channel处理器
+ * 这里收到了服务端返回的数据，带有response，我们要将发送时的CompletableFuture唤醒并返回服务端响应
+ * @see com.horkr.jdk.learn.network.netty.rpc.core.RpcProxyFactory#getProxy(Class)
+ */
 public class ClientHandler extends ChannelInboundHandlerAdapter {
     public final Logger log = LoggerFactory.getLogger(ClientHandler.class);
 

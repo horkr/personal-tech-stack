@@ -6,14 +6,15 @@ import com.horkr.jdk.learn.network.netty.rpc.message.MessageHeader;
 import com.horkr.jdk.learn.network.netty.rpc.serializ.ObjSerializer;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.net.SocketAddress;
 import java.util.List;
 
+/**
+ * 反序列化处理器
+ */
 public class DecodeHandlerV2 extends ByteToMessageDecoder {
 
     public final Logger log = LoggerFactory.getLogger(DecodeHandlerV2.class);

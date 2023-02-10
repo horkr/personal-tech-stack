@@ -10,6 +10,13 @@ import java.io.IOException;
 public class MainTest {
     public static final Logger log = LoggerFactory.getLogger(MainTest.class);
 
+    /**
+     * 测试rpc远程调用
+     * 1. 获取一个代理对象
+     * 2. 执行方法的远程调用
+     * 还需启动服务端
+     * @see RpcServer
+     */
     public static void main(String[] args) {
         ClientFactory.configPoolSize(1);
         CustomService customService = RpcProxyFactory.getProxy(CustomService.class);

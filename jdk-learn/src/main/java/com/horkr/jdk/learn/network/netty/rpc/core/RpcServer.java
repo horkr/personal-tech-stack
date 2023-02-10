@@ -1,6 +1,5 @@
 package com.horkr.jdk.learn.network.netty.rpc.core;
 
-import com.horkr.jdk.learn.network.netty.rpc.handler.DecodeHandlerV1;
 import com.horkr.jdk.learn.network.netty.rpc.handler.DecodeHandlerV2;
 import com.horkr.jdk.learn.network.netty.rpc.handler.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
@@ -20,6 +19,9 @@ public class RpcServer {
         rpcServer.start();
     }
 
+    /**
+     * 创建一个rpc远程调用 server
+     */
     public void start(){
         ChannelFuture bind = new ServerBootstrap()
                 .group(new NioEventLoopGroup(1),new NioEventLoopGroup(10))
