@@ -17,7 +17,8 @@ gradlew.bat
 gradlew
 gradle/
 
-
+*/out/
+*/build/
 
 # IDE files
 .classpath
