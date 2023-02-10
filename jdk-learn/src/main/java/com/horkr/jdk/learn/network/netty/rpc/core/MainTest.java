@@ -14,9 +14,10 @@ public class MainTest {
         ClientFactory.configPoolSize(1);
         CustomService customService = RpcProxyFactory.getProxy(CustomService.class);
         for (int i = 0; i < 100; i++) {
+            int finalI = i;
             ThreadUtil.startByNewThread("client-bus-thread-"+i,()->{
-                customService.update(1);
-                log.info("远程调用执行结束----");
+                String update = customService.update(finalI);
+                log.info("远程调用执行结束----请求参数：{}，调用结果：{}",finalI,update);
             });
         }
         try {

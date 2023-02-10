@@ -87,7 +87,7 @@ public class MessageBody implements Serializable {
         this.args = args;
     }
 
-    public Object getResponse() {
+    public String getResponse() {
         return response;
     }
 
