@@ -8,7 +8,11 @@ import com.horkr.util.thread.ThreadUtil;
  * @author 卢亮宏
  */
 public class Problem {
+//    static class Resource {
+//        private volatile long x = 0l;
+//    }
     static class Resource {
+        private volatile long p1,p2,p3,p4,p5,p6,p7;
         private volatile long x = 0l;
     }
 
