@@ -1,6 +1,5 @@
 package com.horkr.jdk.learn.concurrency.aqs;
 
-import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
