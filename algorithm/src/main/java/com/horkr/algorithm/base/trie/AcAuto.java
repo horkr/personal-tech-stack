@@ -3,25 +3,32 @@ package com.horkr.algorithm.base.trie;
 import java.util.*;
 
 public class AcAuto {
-    public static class StringSearchResult {
-        private int _index;
-        //所在位置
-        private String _keyword;
+    public static class HitResult {
+        /**
+         * 命中关键词
+         */
+        private final String keyword;
+
+        /**
+         * 命中位置
+         */
+        private final int index;
 
         //关键词
-        public StringSearchResult(int index, String keyword) {
-            _index = index;
-            _keyword = keyword;
+        public HitResult(int index, String keyword) {
+            this.index = index;
+            this.keyword = keyword;
         }
 
         public int index() {
-            return _index;
+            return index;
         }
 
         public String keyword() {
-            return _keyword;
+            return keyword;
         }
     }
+
     /**
      * <p>Title: MyOneACSearchTest.java</p>
      * <p>Description:ac自动机 </p>
@@ -36,8 +43,8 @@ public class AcAuto {
         public static void main(String[] args) {
             String[] keywords = new String[]{"我是好人", "我是坏人", "好人", "坏人", "世界", "那么大", "世界那么大", "大"};
             MyOneACSearchTest search = new MyOneACSearchTest(keywords);
-            StringSearchResult[] findAll = search.findAll("我是好人吗?这事需要问问自己,人能分成好人坏人吗?这恐怕谁也无法解答.世界那么大,给你的想法那么大,我们世界里,只能想想大而已");
-            for (StringSearchResult result : findAll) {
+            HitResult[] findAll = search.findAll("我是好人吗?这事需要问问自己,人能分成好人坏人吗?这恐怕谁也无法解答.世界那么大,给你的想法那么大,我们世界里,只能想想大而已");
+            for (HitResult result : findAll) {
                 System.out.println(result.keyword() + " : " + result.index());
             }
 
@@ -55,9 +62,9 @@ public class AcAuto {
         private TreeNode root;
 
         //查找全部的模式串
-        public StringSearchResult[] findAll(String text) {
+        public HitResult[] findAll(String text) {
             //可以找到 转移到下个节点 不能找到在失败指针节点中查找直到为root节点
-            ArrayList<StringSearchResult> results = new ArrayList<StringSearchResult>();
+            ArrayList<HitResult> results = new ArrayList<>();
             int index = 0;
             TreeNode mid = root;
             while (index < text.length()) {
@@ -77,11 +84,11 @@ public class AcAuto {
                 if (temp != null) mid = temp;
 
                 for (String result : mid.getResults()) {
-                    results.add(new StringSearchResult(index - result.length() + 1, result));
+                    results.add(new HitResult(index - result.length() + 1, result));
                 }
                 index++;
             }
-            return results.toArray(new StringSearchResult[results.size()]);
+            return results.toArray(new HitResult[results.size()]);
         }
 
 

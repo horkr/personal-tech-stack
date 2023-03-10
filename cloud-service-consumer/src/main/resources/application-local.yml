@@ -21,7 +21,6 @@ spring:
   #  不能有eureka和nacos两个注册中心，排除一个
   autoconfigure:
     exclude: org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration
-
 #暴露actuator端点
 management:
   endpoints:
@@ -33,10 +32,8 @@ logging:
     com:
       horkr: debug
 
-custom.turnon: true
+custom.turnon: 54321
 feign:
-#  hystrix:
-#    enabled: true
   connect:
     timeout:
       millis: 30000
@@ -47,12 +44,3 @@ feign:
     max-connections: 200
     #    每个url的最大连接数
     max-connections-per-route: 50
-
-#agilines:
-#  microservice:
-#    definitions:
-#      - serviceName: service-provider
-#        closed: true
-##        proxyBeanClassPackage: com.horkr.cloud.consumer.service.ConsumerService
-#      - serviceName: service-consumer
-#        closed: true

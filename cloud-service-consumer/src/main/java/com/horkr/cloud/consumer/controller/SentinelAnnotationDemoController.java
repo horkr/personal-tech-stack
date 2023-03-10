@@ -1,7 +1,6 @@
 package com.horkr.cloud.consumer.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.horkr.cloud.consumer.sentinel.ExceptionUtil;
 import com.horkr.cloud.consumer.service.SentinelService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,16 +62,21 @@ public class SentinelAnnotationDemoController {
      * 测试慢调用比例熔断
      */
     @SentinelResource(value = "slowCallRatio",
-            fallback = "fallback", fallbackClass = ExceptionUtil.class,
-            blockHandler = "handleException", blockHandlerClass = ExceptionUtil.class
+            fallback = "fallback", fallbackClass = SentinelAnnotationDemoController.class,
+            blockHandler = "handleException", blockHandlerClass = SentinelAnnotationDemoController.class
     )
     @GetMapping(value = "/slowCallRatio")
-    public String slowCallRatio() throws InterruptedException {
+    public Object slowCallRatio() throws InterruptedException {
         Thread.sleep(100);
         return SUCCESS;
     }
 
-
+    public static String handleException(){
+        return "sasasa";
+    }
+    public static Object fallback(){
+        return 1;
+    }
 
 
 
@@ -110,6 +114,26 @@ public class SentinelAnnotationDemoController {
 
 
 
+    /**
+     * 系统规则测试
+     */
+    @SentinelResource(value = "/systemRule",
+            fallback = "systemRuleFallback",
+            blockHandler = "systemRuleHandleException"
+    )
+    @GetMapping(value = "/systemRule")
+    public String systemRule(){
+        return SUCCESS;
+    }
+
+    /**
+     * 回调方法定义可以是其他类的静态方法，或者当前类的非静态方法也可以
+     * @return
+     */
+    public String systemRuleFallback(){return "触发系统规则Fallback";}
+
+
+    public String systemRuleHandleException(){return "触发系统规则block";}
     /**
      * 授权规则测试
      */

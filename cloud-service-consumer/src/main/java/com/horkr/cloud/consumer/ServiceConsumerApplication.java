@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.client.RestTemplate;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication(exclude = {EurekaClientAutoConfiguration.class, EurekaDiscoveryClientConfiguration.class})
 @EnableDiscoveryClient
@@ -20,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan(basePackages = "com.horkr")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 @ConfigurationPropertiesScan
+@EnableSwagger2
 public class ServiceConsumerApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(ServiceConsumerApplication.class, args);

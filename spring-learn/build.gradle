@@ -28,4 +28,5 @@ dependencies {
         exclude group:'org.apache.logging.log4j'
     }
 
+    implementation 'org.springframework.boot:spring-boot-starter-aop:'+spring_boot_version
 }
