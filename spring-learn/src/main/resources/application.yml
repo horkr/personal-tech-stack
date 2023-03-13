@@ -32,8 +32,11 @@ spring:
     bootstrap-servers: localhost:9092
   rocketmq:
     name-server: 127.0.0.1:9876
+  aop:
+    proxy-target-class: false
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+

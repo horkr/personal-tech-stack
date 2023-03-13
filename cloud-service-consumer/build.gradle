@@ -12,7 +12,8 @@ dependencies {
     implementation 'com.alibaba.csp:sentinel-web-servlet:'+sentinel_version
     compile project(':cloud-service-common')
     implementation 'org.springframework.boot:spring-boot-starter-aop:'+spring_boot_version
-
+    compile 'io.springfox:springfox-swagger2:'+swagger_version
+    compile 'io.springfox:springfox-swagger-ui:'+swagger_version
     compile 'cn.hutool:hutool-all:'+hutool_version
 //    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign',version:'3.0.3'
 }

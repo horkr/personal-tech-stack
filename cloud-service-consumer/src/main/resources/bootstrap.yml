@@ -3,8 +3,8 @@ spring:
   application:
 #    表示当前微服务需要向配置中心索要order-center的配置
     name: service-consumer
-  profiles:
-    active: prod
+#  profiles:
+#    active: prod
   cloud:
     nacos:
       config:

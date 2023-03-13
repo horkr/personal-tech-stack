@@ -41,6 +41,7 @@ public class Sample {
         private int hp;
         private int mp;
         private final List<Observer> observers = new ArrayList<>();
+
         @Override
         public void notifyObservers() {
             observers.forEach(Observer::update);
