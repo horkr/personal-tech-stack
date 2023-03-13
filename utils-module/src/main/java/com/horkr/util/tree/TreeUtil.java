@@ -2,8 +2,10 @@ package com.horkr.util.tree;
 
 import com.horkr.util.CollectionCommonUtils;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.formula.functions.T;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,8 +14,10 @@ import java.util.Queue;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 
 /**
  * 树工具类
@@ -46,6 +50,32 @@ public class TreeUtil {
     }
 
 
+    /**
+     * 查找树节点上的循环引用
+     *
+     * @param node                   根节点
+     * @param obtainChildrenFunction 获取子件的方法
+     * @param uniqueKeyFunction      获取节点唯一key的方法
+     * @param path                   路径字符串
+     * @return T  循环的节点
+     */
+    public static <T> T checkCircleInTree(T node, Function<T, Collection<T>> obtainChildrenFunction, Function<T, String> uniqueKeyFunction, String path) {
+        String uniqueKey = uniqueKeyFunction.apply(node);
+        if (path.contains(uniqueKey)) {
+            return node;
+        }
+        String newPath = StringUtils.joinWith("-", path, uniqueKey);
+        Collection<T> children = obtainChildrenFunction.apply(node);
+        if (CollectionUtils.isNotEmpty(children)) {
+            for (T child : children) {
+                T circleNode = checkCircleInTree(child, obtainChildrenFunction, uniqueKeyFunction, newPath);
+                if (nonNull(circleNode)) {
+                    return circleNode;
+                }
+            }
+        }
+        return null;
+    }
 
 
     /**

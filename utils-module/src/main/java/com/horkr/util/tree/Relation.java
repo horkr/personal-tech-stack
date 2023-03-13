@@ -3,7 +3,7 @@ package com.horkr.util.tree;
 /**
  * @author 卢亮宏
  */
-public class Relation<R extends Node> {
+public class Relation<T extends Node> {
 
     private String id;
 
@@ -11,13 +11,13 @@ public class Relation<R extends Node> {
 
     private String toId;
 
-    private R childNode;
+    private T childNode;
 
 
     public Relation() {
     }
 
-    public Relation(String id, String fromId, String toId, R childNode) {
+    public Relation(String id, String fromId, String toId, T childNode) {
         this.id = id;
         this.fromId = fromId;
         this.toId = toId;
@@ -48,11 +48,11 @@ public class Relation<R extends Node> {
         this.toId = toId;
     }
 
-    public R getChildNode() {
+    public T getChildNode() {
         return childNode;
     }
 
-    public void setChildNode(R childNode) {
+    public void setChildNode(T childNode) {
         this.childNode = childNode;
     }
 }
