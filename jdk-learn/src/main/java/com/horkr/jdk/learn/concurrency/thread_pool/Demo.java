@@ -3,11 +3,7 @@ package com.horkr.jdk.learn.concurrency.thread_pool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author 卢亮宏
@@ -15,18 +11,19 @@ import java.util.concurrent.TimeUnit;
 public class Demo {
     public static final Logger log = LoggerFactory.getLogger(Demo.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 3, 0, TimeUnit.SECONDS, new SynchronousQueue<>());
-        Future<Integer> submit = threadPoolExecutor.submit(() -> {
+        Future<Integer> future = threadPoolExecutor.submit(() -> {
             Thread.sleep(10000);
             return 3;
         });
         try {
-            submit.get();
+            future.get();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
     }
 }

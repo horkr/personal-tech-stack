@@ -48,11 +48,3 @@ feign:
     #    每个url的最大连接数
     max-connections-per-route: 50
 
-#agilines:
-#  microservice:
-#    definitions:
-#      - serviceName: service-provider
-#        closed: true
-##        proxyBeanClassPackage: com.horkr.cloud.consumer.service.ConsumerService
-#      - serviceName: service-consumer
-#        closed: true
