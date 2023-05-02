@@ -8,4 +8,5 @@ dependencies {
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:'+nacos_version
     implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:'+nacos_version
     implementation 'com.google.code.gson:gson:'+gson_version
+
 }

@@ -52,6 +52,9 @@ subprojects {
         swagger_version ="2.7.0"
         rocketmq_version ="1.0.0.RELEASE"
         netty_version="4.1.49.Final"
+        redisson_version="3.15.6"
+        zk_version="3.5.5"
+        zk_client_version="0.10"
     }
 
 //    dependencies {
