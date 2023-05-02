@@ -6,7 +6,9 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/pcp_dev?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
-
+  redis:
+    redisson:
+      file: classpath:redisson.yml
   kafka:
     producer:
       retries: 3
