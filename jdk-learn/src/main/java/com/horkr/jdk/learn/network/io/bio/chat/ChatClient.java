@@ -6,10 +6,13 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * @author 卢亮宏
+ */
 public class ChatClient {
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket("localhost", 9999);
+            Socket socket = new Socket("123.60.161.209", 8888);
             System.out.println("Connected to server: " + socket.getInetAddress());
 
             Thread thread = new Thread(new ServerHandler(socket));
@@ -19,6 +22,10 @@ public class ChatClient {
             Scanner scanner = new Scanner(System.in);
             while (true) {
                 String message = scanner.nextLine();
+                if(message.equals("exit")){
+                    socket.close();
+                    break;
+                }
                 outputStream.write(message.getBytes());
             }
         } catch (IOException e) {

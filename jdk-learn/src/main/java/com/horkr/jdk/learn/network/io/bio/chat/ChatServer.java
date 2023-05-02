@@ -7,11 +7,14 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * @author 卢亮宏
+ */
 public class ChatServer {
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(9999);
-            System.out.println("Server started on port 9999");
+            ServerSocket serverSocket = new ServerSocket(8888);
+            System.out.println("Server started on port 8888");
 
             Socket socket = serverSocket.accept();
             System.out.println("Client connected: " + socket.getInetAddress());
@@ -39,8 +42,9 @@ public class ChatServer {
 
         @Override
         public void run() {
+            InputStream inputStream = null;
             try {
-                InputStream inputStream = socket.getInputStream();
+                inputStream = socket.getInputStream();
                 byte[] buffer = new byte[1024];
                 while (true) {
                     int len = inputStream.read(buffer);
@@ -52,6 +56,14 @@ public class ChatServer {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
+            }finally {
+                try {
+                    inputStream.close();
+                    socket.close();
+                    System.out.println("断开连接");
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         }
     }
