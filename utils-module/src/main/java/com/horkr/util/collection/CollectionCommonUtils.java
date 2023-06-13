@@ -1,4 +1,4 @@
-package com.horkr.util;
+package com.horkr.util.collection;
 
 import com.horkr.util.dto.ListCompareResult;
 import org.apache.commons.collections.CollectionUtils;
