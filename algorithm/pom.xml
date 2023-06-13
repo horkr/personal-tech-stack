@@ -10,10 +10,9 @@
   <version>1.0-SNAPSHOT</version>
   <dependencies>
     <dependency>
-      <groupId>personal-tech-stack</groupId>
+      <groupId>com.horkr</groupId>
       <artifactId>utils-module</artifactId>
-      <version>unspecified</version>
-      <scope>compile</scope>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
