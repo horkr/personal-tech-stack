@@ -2,8 +2,12 @@ package com.horkr.spring.learn.aop;
 
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service
 public class CustomServiceImpl implements CustomService{
+	@Resource
+	private A a;
 	@Override
 	public void add() {
 		System.err.println("add() invoke");

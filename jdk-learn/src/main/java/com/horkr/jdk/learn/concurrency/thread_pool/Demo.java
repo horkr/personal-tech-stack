@@ -13,6 +13,9 @@ public class Demo {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 3, 0, TimeUnit.SECONDS, new SynchronousQueue<>());
+        threadPoolExecutor.execute(()->{
+
+        });
         Future<Integer> future = threadPoolExecutor.submit(() -> {
             Thread.sleep(10000);
             return 3;

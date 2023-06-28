@@ -1,15 +1,15 @@
 package com.horkr.spring.learn;
 
 import com.horkr.spring.learn.aop.CustomService;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @author 卢亮宏
  */
-@EnableSwagger2
 @SpringBootApplication
 public class SpringLearnApplication {
     public static void main(String[] args) {
@@ -17,4 +17,6 @@ public class SpringLearnApplication {
         CustomService customService = app.getBean(CustomService.class);
         customService.add();
     }
+
+
 }

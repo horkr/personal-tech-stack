@@ -12,7 +12,7 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-gateway</artifactId>
-      <scope>runtime</scope>
+
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>
@@ -28,7 +28,7 @@
       <groupId>com.alibaba.cloud</groupId>
       <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
       <version>2.2.5.RELEASE</version>
-      <scope>runtime</scope>
+
       <exclusions>
         <exclusion>
           <artifactId>*</artifactId>

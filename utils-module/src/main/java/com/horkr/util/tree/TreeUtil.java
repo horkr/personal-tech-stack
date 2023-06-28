@@ -1,10 +1,8 @@
 package com.horkr.util.tree;
 
-import com.horkr.util.CollectionCommonUtils;
+import com.horkr.util.collection.CollectionCommonUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.ss.formula.functions.T;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;

@@ -10,9 +10,9 @@
   </parent>
   <dependencies>
     <dependency>
-      <groupId>personal-tech-stack</groupId>
+      <groupId>com.horkr</groupId>
       <artifactId>cloud-service-common</artifactId>
-      <version>unspecified</version>
+      <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-      <scope>runtime</scope>
+
       <exclusions>
         <exclusion>
           <artifactId>compactmap</artifactId>
@@ -68,7 +68,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
       <version>2.1.6.RELEASE</version>
-      <scope>runtime</scope>
+
       <exclusions>
         <exclusion>
           <artifactId>compactmap</artifactId>
@@ -96,7 +96,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-autoconfigure</artifactId>
       <version>2.1.6.RELEASE</version>
-      <scope>runtime</scope>
+
       <exclusions>
         <exclusion>
           <artifactId>compactmap</artifactId>
