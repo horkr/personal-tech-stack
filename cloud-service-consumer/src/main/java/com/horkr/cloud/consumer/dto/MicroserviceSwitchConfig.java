@@ -14,10 +14,8 @@ import java.util.List;
  * @author 卢亮宏
  */
 
-@ConfigurationProperties("agilines.microservice")
-@Validated
+
 public class MicroserviceSwitchConfig {
-    @NotNull
     @Valid
     private List<MicroserviceAccessDefinition> definitions = new ArrayList<>();
 

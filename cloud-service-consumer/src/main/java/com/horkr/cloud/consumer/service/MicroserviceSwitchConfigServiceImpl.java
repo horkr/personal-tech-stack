@@ -14,12 +14,10 @@ import java.util.stream.Collectors;
  * 微服务开关配置服务 配置文件方式实现
  * @author 卢亮宏
  */
-@Service
 public class MicroserviceSwitchConfigServiceImpl implements MicroserviceSwitchService {
 
     private final Map<String, MicroserviceAccessDefinition> configMap;
 
-    @Autowired
     public MicroserviceSwitchConfigServiceImpl(MicroserviceSwitchConfig microserviceSwitchConfig) {
         List<MicroserviceAccessDefinition> definitions = microserviceSwitchConfig.getDefinitions();
         this.configMap = definitions.stream().collect(Collectors.toMap(MicroserviceAccessDefinition::getServiceName, Function.identity(),(a, b)->a));

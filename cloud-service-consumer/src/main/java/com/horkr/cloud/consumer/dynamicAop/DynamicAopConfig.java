@@ -54,23 +54,23 @@ public class DynamicAopConfig implements BeanDefinitionRegistryPostProcessor {
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        String[] beanDefinitionNames = registry.getBeanDefinitionNames();
-        List<String> cutClassList = new ArrayList<>();
-        for (String beanDefinitionName : beanDefinitionNames) {
-            BeanDefinition beanDefinition = registry.getBeanDefinition(beanDefinitionName);
-            String factoryBeanObjectType = (String) beanDefinition.getAttribute("factoryBeanObjectType");
-            if (StringUtils.isNotEmpty(factoryBeanObjectType)) {
-                cutClassList.add(factoryBeanObjectType);
-            }
-        }
-        String express = cutClassList.stream().map(className -> String.format("bean(%s)", className)).collect(Collectors.joining("||"));
-        DynamicAdvisor dynamicAdvisor = new DynamicAdvisor(express, new MethodInterceptor() {
-            @Override
-            public Object invoke(MethodInvocation invocation) throws Throwable {
-                return invocation.proceed();
-            }
-        });
-        DefaultListableBeanFactory factory = (DefaultListableBeanFactory) registry;
-        factory.registerSingleton("customIntereprtor",dynamicAdvisor);
+//        String[] beanDefinitionNames = registry.getBeanDefinitionNames();
+//        List<String> cutClassList = new ArrayList<>();
+//        for (String beanDefinitionName : beanDefinitionNames) {
+//            BeanDefinition beanDefinition = registry.getBeanDefinition(beanDefinitionName);
+//            String factoryBeanObjectType = (String) beanDefinition.getAttribute("factoryBeanObjectType");
+//            if (StringUtils.isNotEmpty(factoryBeanObjectType)) {
+//                cutClassList.add(factoryBeanObjectType);
+//            }
+//        }
+//        String express = cutClassList.stream().map(className -> String.format("bean(%s)", className)).collect(Collectors.joining("||"));
+//        DynamicAdvisor dynamicAdvisor = new DynamicAdvisor(express, new MethodInterceptor() {
+//            @Override
+//            public Object invoke(MethodInvocation invocation) throws Throwable {
+//                return invocation.proceed();
+//            }
+//        });
+//        DefaultListableBeanFactory factory = (DefaultListableBeanFactory) registry;
+//        factory.registerSingleton("customIntereprtor",dynamicAdvisor);
     }
 }
