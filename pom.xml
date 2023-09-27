@@ -144,6 +144,7 @@
         <module>jdk-learn</module>
         <module>spring-learn</module>
         <module>utils-module</module>
+        <module>new-tech</module>
     </modules>
 
     <build>

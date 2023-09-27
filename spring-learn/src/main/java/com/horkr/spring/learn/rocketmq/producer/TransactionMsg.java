@@ -33,7 +33,7 @@
 //                return LocalTransactionState.ROLLBACK_MESSAGE;
 //            }
 //        };
-//
+//  
 //        log.info("发消息");
 //        producer.sendMessageInTransaction(new Message("local-tp2", "first msg---".getBytes(StandardCharsets.UTF_8)), localTransactionExecuter, null);
 //
